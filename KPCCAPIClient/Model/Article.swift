@@ -11,7 +11,6 @@
 //
 
 import Foundation
-import UIKit
 
 public struct Article: Listable, Codable {
 	/// The article's ID.

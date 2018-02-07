@@ -13,17 +13,27 @@
 import Foundation
 
 public struct ProgramSchedule: Codable {
-	/// The program schedule's associated ScheduleOccurrence objects.
+	/// The ProgramSchedule's associated ScheduleOccurrence objects.
 	public var scheduleOccurrences: [ScheduleOccurrence]
 
-	/// The program schedule's associated NSDateRange objects. Computed.
+	/// The ProgramSchedule's associated DateRange objects.
 	public var dateRanges: [DateRange] {
 		return scheduleOccurrences.map { $0.dateRange }
 	}
-	
-	/// The program schedule's associated NSDateRange objects, normalized. Computed.
+
+	/// The ProgramSchedule's associated DateRange objects, normalized.
 	public var normalizedDateRanges: [DateRange] {
 		return scheduleOccurrences.map { $0.normalizedDateRange }
+	}
+
+	public var currentScheduleOccurrence: ScheduleOccurrence? {
+		for scheduleOccurrence in self.scheduleOccurrences {
+			if scheduleOccurrence.isCurrent {
+				return scheduleOccurrence
+			}
+		}
+
+		return nil
 	}
 
 	// ###

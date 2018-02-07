@@ -40,11 +40,12 @@ extension Article {
 				do {
 					let articlesResponse	= try KPCCAPIClient.shared.jsonDecoder.decode(ArticlesResponse.self, from: data)
 					let articles			= articlesResponse.articles
-
+					
 					DispatchQueue.main.async {
 						completion(articles, nil)
 					}
-				} catch _ as DecodingError {
+				} catch let foo as DecodingError {
+					print("foo = \(foo)")
 					DispatchQueue.main.async {
 						completion(nil, .decodingError)
 					}

@@ -11,7 +11,12 @@
 //
 
 import Foundation
-import UIKit
+#if os(iOS) || os(tvOS)
+	import UIKit
+#elseif os(OSX)
+	import AppKit
+#else
+#endif
 
 public struct Program: Listable, Codable {
 	public enum ProgramStatus: String, Codable {
@@ -71,8 +76,17 @@ public struct Program: Listable, Codable {
 		if let slug = self.slug {
 			let processedSlug	= slug.lowercased().replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range:nil)
 			let scaleString:String
-			if UIScreen.main.scale >= 2 {
-				scaleString = String.init(format: "@%dx", Int(UIScreen.main.scale))
+
+#if os(iOS) || os(tvOS)
+			let scale	= UIScreen.main.scale
+#elseif os(OSX)
+			let scale	= NSScreen.main?.backingScaleFactor ?? 1.0
+#else
+			let scale	= 1.0
+#endif
+
+			if scale >= 2.0 {
+				scaleString = String.init(format: "@%dx", Int(scale))
 			} else {
 				scaleString = "@2x"
 			}
@@ -88,8 +102,17 @@ public struct Program: Listable, Codable {
 		if let slug = self.slug {
 			let processedSlug	= slug.lowercased().replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range:nil)
 			let scaleString:String
-			if UIScreen.main.scale >= 2 {
-				scaleString = String.init(format: "@%dx", Int(UIScreen.main.scale))
+
+#if os(iOS) || os(tvOS)
+			let scale	= UIScreen.main.scale
+#elseif os(OSX)
+			let scale	= NSScreen.main?.backingScaleFactor ?? 1.0
+#else
+			let scale	= 1.0
+#endif
+
+			if scale >= 2.0 {
+				scaleString = String.init(format: "@%dx", Int(scale))
 			} else {
 				scaleString = "@2x"
 			}

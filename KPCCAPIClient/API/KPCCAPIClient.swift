@@ -74,10 +74,18 @@ extension KPCCAPIClient {
 			#if IS_EXTENSION
 				// Extensions cannot access UIApplication.shared, therefore cannot do background tasks... - JAC
 			#else
-				let backgroundTask = BackgroundTask("APIClient GET")
+#if os(iOS)
+			let backgroundTask = BackgroundTask("APIClient GET")
+#endif
 			#endif
 			let dataTask = urlSession.dataTask(with: url) { data, _, _ in
-				if data != nil {
+				if let data = data {
+					if self.debugEnabled == true {
+						if let dataString = String(bytes: data, encoding: .utf8) {
+							print("KPCC API - data \(dataString)")
+						}
+					}
+
 					completion(data, nil)
 				} else {
 					completion(nil, .dataUnavailable)
@@ -85,7 +93,9 @@ extension KPCCAPIClient {
 				#if IS_EXTENSION
 					// Extensions cannot access UIApplication.shared, therefore cannot do background tasks... - JAC
 				#else
+#if os(iOS)
 					backgroundTask?.end()
+#endif
 				#endif
 			}
 			dataTask.resume()

@@ -23,6 +23,14 @@ public struct ScheduleOccurrence: Codable {
         return dateRange.dateRangeByAddingTimeIntervals(start: 0.0, end: -1.0)
     }
 
+	public var isCurrent: Bool {
+		if self.dateRange.contains(Date()) {
+			return true
+		}
+
+		return false
+	}
+
 	public func encode(to encoder: Encoder) throws {
 		var container = encoder.container(keyedBy: CodingKeys.self)
 

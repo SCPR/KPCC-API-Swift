@@ -14,22 +14,22 @@ import Foundation
 
 public struct AssetNative: Codable {
 	public let id:String
-	public let `class`:AssetNativeClass
+	public let type:AssetNativeType?
 
 	enum CodingKeys: String, CodingKey {
 		case id						= "id"
-		case `class`				= "class"
+		case type					= "type"
 	}
 
-	public enum AssetNativeClass: String, Codable {
+	public enum AssetNativeType: String, Codable {
 		/// A video sourced from YouTube.
-		case youtubeVideo
+		case youtubeVideo		= "YoutubeVideo"
 
 		/// A video sourced from Brightcove.
-		case brightcoveVideo
+		case brightcoveVideo	= "BrightcoveVideo"
 
 		/// A video sourced from Vimeo.
-		case vimeoVideo
+		case vimeoVideo			= "VimeoVideo"
 	}
 }
 

@@ -7,6 +7,97 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1DCFE3202A5D5C009685D3 /* KPCCAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F1DCFE2202A5D5C009685D3 /* KPCCAPIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1DD010202A62BB009685D3 /* KPCCAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F1DCFE2202A5D5C009685D3 /* KPCCAPIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1DD011202A62BC009685D3 /* KPCCAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F1DCFE2202A5D5C009685D3 /* KPCCAPIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1DD012202A62BC009685D3 /* KPCCAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F1DCFE2202A5D5C009685D3 /* KPCCAPIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1DD016202A6ADC009685D3 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888322008351C00C157D3 /* Address.swift */; };
+		1F1DD017202A6ADC009685D3 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888282008351B00C157D3 /* Article.swift */; };
+		1F1DD018202A6ADC009685D3 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882E2008351C00C157D3 /* Asset.swift */; };
+		1F1DD019202A6ADC009685D3 /* AssetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888222008351B00C157D3 /* AssetSize.swift */; };
+		1F1DD01A202A6ADC009685D3 /* Attribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888302008351C00C157D3 /* Attribution.swift */; };
+		1F1DD01B202A6ADC009685D3 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882C2008351B00C157D3 /* Audio.swift */; };
+		1F1DD01C202A6ADC009685D3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888272008351B00C157D3 /* Category.swift */; };
+		1F1DD01D202A6ADC009685D3 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888252008351B00C157D3 /* Episode.swift */; };
+		1F1DD01E202A6ADC009685D3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882B2008351B00C157D3 /* Event.swift */; };
+		1F1DD01F202A6ADC009685D3 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882F2008351C00C157D3 /* List.swift */; };
+		1F1DD020202A6ADC009685D3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888312008351C00C157D3 /* Location.swift */; };
+		1F1DD021202A6ADC009685D3 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882A2008351B00C157D3 /* Member.swift */; };
+		1F1DD022202A6ADC009685D3 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888232008351B00C157D3 /* Program.swift */; };
+		1F1DD023202A6ADC009685D3 /* ProgramSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888212008351B00C157D3 /* ProgramSchedule.swift */; };
+		1F1DD024202A6ADC009685D3 /* ScheduleOccurrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888292008351B00C157D3 /* ScheduleOccurrence.swift */; };
+		1F1DD025202A6ADC009685D3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888262008351B00C157D3 /* Settings.swift */; };
+		1F1DD026202A6ADC009685D3 /* Sponsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888242008351B00C157D3 /* Sponsor.swift */; };
+		1F1DD027202A6ADC009685D3 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882D2008351B00C157D3 /* Tag.swift */; };
+		1F1DD028202A6ADC009685D3 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888322008351C00C157D3 /* Address.swift */; };
+		1F1DD029202A6ADC009685D3 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888282008351B00C157D3 /* Article.swift */; };
+		1F1DD02A202A6ADC009685D3 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882E2008351C00C157D3 /* Asset.swift */; };
+		1F1DD02B202A6ADC009685D3 /* AssetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888222008351B00C157D3 /* AssetSize.swift */; };
+		1F1DD02C202A6ADC009685D3 /* Attribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888302008351C00C157D3 /* Attribution.swift */; };
+		1F1DD02D202A6ADC009685D3 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882C2008351B00C157D3 /* Audio.swift */; };
+		1F1DD02E202A6ADC009685D3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888272008351B00C157D3 /* Category.swift */; };
+		1F1DD02F202A6ADC009685D3 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888252008351B00C157D3 /* Episode.swift */; };
+		1F1DD030202A6ADC009685D3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882B2008351B00C157D3 /* Event.swift */; };
+		1F1DD031202A6ADC009685D3 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882F2008351C00C157D3 /* List.swift */; };
+		1F1DD032202A6ADC009685D3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888312008351C00C157D3 /* Location.swift */; };
+		1F1DD033202A6ADC009685D3 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882A2008351B00C157D3 /* Member.swift */; };
+		1F1DD034202A6ADC009685D3 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888232008351B00C157D3 /* Program.swift */; };
+		1F1DD035202A6ADC009685D3 /* ProgramSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888212008351B00C157D3 /* ProgramSchedule.swift */; };
+		1F1DD036202A6ADC009685D3 /* ScheduleOccurrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888292008351B00C157D3 /* ScheduleOccurrence.swift */; };
+		1F1DD037202A6ADC009685D3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888262008351B00C157D3 /* Settings.swift */; };
+		1F1DD038202A6ADC009685D3 /* Sponsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888242008351B00C157D3 /* Sponsor.swift */; };
+		1F1DD039202A6ADC009685D3 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882D2008351B00C157D3 /* Tag.swift */; };
+		1F1DD03A202A6ADD009685D3 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888322008351C00C157D3 /* Address.swift */; };
+		1F1DD03B202A6ADD009685D3 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888282008351B00C157D3 /* Article.swift */; };
+		1F1DD03C202A6ADD009685D3 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882E2008351C00C157D3 /* Asset.swift */; };
+		1F1DD03D202A6ADD009685D3 /* AssetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888222008351B00C157D3 /* AssetSize.swift */; };
+		1F1DD03E202A6ADD009685D3 /* Attribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888302008351C00C157D3 /* Attribution.swift */; };
+		1F1DD03F202A6ADD009685D3 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882C2008351B00C157D3 /* Audio.swift */; };
+		1F1DD040202A6ADD009685D3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888272008351B00C157D3 /* Category.swift */; };
+		1F1DD041202A6ADD009685D3 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888252008351B00C157D3 /* Episode.swift */; };
+		1F1DD042202A6ADD009685D3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882B2008351B00C157D3 /* Event.swift */; };
+		1F1DD043202A6ADD009685D3 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882F2008351C00C157D3 /* List.swift */; };
+		1F1DD044202A6ADD009685D3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888312008351C00C157D3 /* Location.swift */; };
+		1F1DD045202A6ADD009685D3 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882A2008351B00C157D3 /* Member.swift */; };
+		1F1DD046202A6ADD009685D3 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888232008351B00C157D3 /* Program.swift */; };
+		1F1DD047202A6ADD009685D3 /* ProgramSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888212008351B00C157D3 /* ProgramSchedule.swift */; };
+		1F1DD048202A6ADD009685D3 /* ScheduleOccurrence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888292008351B00C157D3 /* ScheduleOccurrence.swift */; };
+		1F1DD049202A6ADD009685D3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888262008351B00C157D3 /* Settings.swift */; };
+		1F1DD04A202A6ADD009685D3 /* Sponsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888242008351B00C157D3 /* Sponsor.swift */; };
+		1F1DD04B202A6ADD009685D3 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8882D2008351B00C157D3 /* Tag.swift */; };
+		1F1DD04C202A6AE1009685D3 /* Article+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888512008355300C157D3 /* Article+KPCCAPIClient.swift */; };
+		1F1DD04D202A6AE1009685D3 /* Episode+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888482008355200C157D3 /* Episode+KPCCAPIClient.swift */; };
+		1F1DD04E202A6AE1009685D3 /* Event+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8884D2008355300C157D3 /* Event+KPCCAPIClient.swift */; };
+		1F1DD04F202A6AE1009685D3 /* List+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888562008355400C157D3 /* List+KPCCAPIClient.swift */; };
+		1F1DD050202A6AE1009685D3 /* Member+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888522008355400C157D3 /* Member+KPCCAPIClient.swift */; };
+		1F1DD051202A6AE1009685D3 /* Program+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8884F2008355300C157D3 /* Program+KPCCAPIClient.swift */; };
+		1F1DD052202A6AE1009685D3 /* ProgramSchedule+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8884A2008355200C157D3 /* ProgramSchedule+KPCCAPIClient.swift */; };
+		1F1DD053202A6AE1009685D3 /* Settings+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8884E2008355300C157D3 /* Settings+KPCCAPIClient.swift */; };
+		1F1DD054202A6AE2009685D3 /* Article+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888512008355300C157D3 /* Article+KPCCAPIClient.swift */; };
+		1F1DD055202A6AE2009685D3 /* Episode+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888482008355200C157D3 /* Episode+KPCCAPIClient.swift */; };
+		1F1DD056202A6AE2009685D3 /* Event+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8884D2008355300C157D3 /* Event+KPCCAPIClient.swift */; };
+		1F1DD057202A6AE2009685D3 /* List+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888562008355400C157D3 /* List+KPCCAPIClient.swift */; };
+		1F1DD058202A6AE2009685D3 /* Member+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888522008355400C157D3 /* Member+KPCCAPIClient.swift */; };
+		1F1DD059202A6AE2009685D3 /* Program+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8884F2008355300C157D3 /* Program+KPCCAPIClient.swift */; };
+		1F1DD05A202A6AE2009685D3 /* ProgramSchedule+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8884A2008355200C157D3 /* ProgramSchedule+KPCCAPIClient.swift */; };
+		1F1DD05B202A6AE2009685D3 /* Settings+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8884E2008355300C157D3 /* Settings+KPCCAPIClient.swift */; };
+		1F1DD05C202A6AE2009685D3 /* Article+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888512008355300C157D3 /* Article+KPCCAPIClient.swift */; };
+		1F1DD05D202A6AE2009685D3 /* Episode+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888482008355200C157D3 /* Episode+KPCCAPIClient.swift */; };
+		1F1DD05E202A6AE2009685D3 /* Event+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8884D2008355300C157D3 /* Event+KPCCAPIClient.swift */; };
+		1F1DD05F202A6AE2009685D3 /* List+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888562008355400C157D3 /* List+KPCCAPIClient.swift */; };
+		1F1DD060202A6AE2009685D3 /* Member+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888522008355400C157D3 /* Member+KPCCAPIClient.swift */; };
+		1F1DD061202A6AE2009685D3 /* Program+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8884F2008355300C157D3 /* Program+KPCCAPIClient.swift */; };
+		1F1DD062202A6AE2009685D3 /* ProgramSchedule+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8884A2008355200C157D3 /* ProgramSchedule+KPCCAPIClient.swift */; };
+		1F1DD063202A6AE2009685D3 /* Settings+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8884E2008355300C157D3 /* Settings+KPCCAPIClient.swift */; };
+		1F1DD064202A6AE8009685D3 /* KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888132008315600C157D3 /* KPCCAPIClient.swift */; };
+		1F1DD065202A6AE9009685D3 /* KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888132008315600C157D3 /* KPCCAPIClient.swift */; };
+		1F1DD066202A6AEA009685D3 /* KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888132008315600C157D3 /* KPCCAPIClient.swift */; };
+		1F1DD068202A6AEE009685D3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888182008336700C157D3 /* DateExtension.swift */; };
+		1F1DD069202A6AEE009685D3 /* DateRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888152008336600C157D3 /* DateRangeExtension.swift */; };
+		1F1DD06B202A6AEF009685D3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888182008336700C157D3 /* DateExtension.swift */; };
+		1F1DD06C202A6AEF009685D3 /* DateRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888152008336600C157D3 /* DateRangeExtension.swift */; };
+		1F1DD06E202A6AEF009685D3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888182008336700C157D3 /* DateExtension.swift */; };
+		1F1DD06F202A6AEF009685D3 /* DateRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888152008336600C157D3 /* DateRangeExtension.swift */; };
 		EFB888142008315600C157D3 /* KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888132008315600C157D3 /* KPCCAPIClient.swift */; };
 		EFB888192008336700C157D3 /* DateRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888152008336600C157D3 /* DateRangeExtension.swift */; };
 		EFB8881A2008336700C157D3 /* BackgroundTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888162008336700C157D3 /* BackgroundTask.swift */; };
@@ -40,8 +131,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EFB887D7200830BD00C157D3 /* KPCCAPIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KPCCAPIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFB887DB200830BD00C157D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F1DCFA2202A593E009685D3 /* KPCCAPIClient_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KPCCAPIClient_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1DCFAF202A5999009685D3 /* KPCCAPIClient_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KPCCAPIClient_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1DCFBC202A59B2009685D3 /* KPCCAPIClient_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KPCCAPIClient_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1DCFC5202A5AA6009685D3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F1DCFE2202A5D5C009685D3 /* KPCCAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KPCCAPIClient.h; sourceTree = "<group>"; };
+		EFB887D7200830BD00C157D3 /* KPCCAPIClient_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KPCCAPIClient_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB888132008315600C157D3 /* KPCCAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPCCAPIClient.swift; sourceTree = "<group>"; };
 		EFB888152008336600C157D3 /* DateRangeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateRangeExtension.swift; sourceTree = "<group>"; };
 		EFB888162008336700C157D3 /* BackgroundTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTask.swift; sourceTree = "<group>"; };
@@ -75,6 +170,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1F1DCF9E202A593E009685D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1DCFAB202A5999009685D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1DCFB8202A59B2009685D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EFB887D3200830BD00C157D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,6 +201,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F1DCFE4202A5DD9009685D3 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				1F1DCFC5202A5AA6009685D3 /* Info.plist */,
+				1F1DCFE2202A5D5C009685D3 /* KPCCAPIClient.h */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		EF2A9DB720083A5E0006B1E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +239,10 @@
 		EFB887D8200830BD00C157D3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EFB887D7200830BD00C157D3 /* KPCCAPIClient.framework */,
+				EFB887D7200830BD00C157D3 /* KPCCAPIClient_iOS.framework */,
+				1F1DCFA2202A593E009685D3 /* KPCCAPIClient_macOS.framework */,
+				1F1DCFAF202A5999009685D3 /* KPCCAPIClient_watchOS.framework */,
+				1F1DCFBC202A59B2009685D3 /* KPCCAPIClient_tvOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,8 +250,8 @@
 		EFB887D9200830BD00C157D3 /* KPCCAPIClient */ = {
 			isa = PBXGroup;
 			children = (
-				EFB887DB200830BD00C157D3 /* Info.plist */,
 				EFB888202008350A00C157D3 /* Model */,
+				1F1DCFE4202A5DD9009685D3 /* Misc */,
 				EFB888122008314100C157D3 /* API */,
 			);
 			path = KPCCAPIClient;
@@ -182,19 +310,98 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		1F1DCF9F202A593E009685D3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F1DD010202A62BB009685D3 /* KPCCAPIClient.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1DCFAC202A5999009685D3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F1DD011202A62BC009685D3 /* KPCCAPIClient.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1DCFB9202A59B2009685D3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F1DD012202A62BC009685D3 /* KPCCAPIClient.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EFB887D4200830BD00C157D3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F1DCFE3202A5D5C009685D3 /* KPCCAPIClient.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		EFB887D6200830BD00C157D3 /* KPCCAPIClient */ = {
+		1F1DCFA1202A593E009685D3 /* KPCCAPIClient_macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EFB887DF200830BD00C157D3 /* Build configuration list for PBXNativeTarget "KPCCAPIClient" */;
+			buildConfigurationList = 1F1DCFA7202A593E009685D3 /* Build configuration list for PBXNativeTarget "KPCCAPIClient_macOS" */;
+			buildPhases = (
+				1F1DCF9D202A593E009685D3 /* Sources */,
+				1F1DCF9E202A593E009685D3 /* Frameworks */,
+				1F1DCF9F202A593E009685D3 /* Headers */,
+				1F1DCFA0202A593E009685D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KPCCAPIClient_macOS;
+			productName = KPCCAPIClient_macOS;
+			productReference = 1F1DCFA2202A593E009685D3 /* KPCCAPIClient_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1F1DCFAE202A5999009685D3 /* KPCCAPIClient_watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F1DCFB4202A5999009685D3 /* Build configuration list for PBXNativeTarget "KPCCAPIClient_watchOS" */;
+			buildPhases = (
+				1F1DCFAA202A5999009685D3 /* Sources */,
+				1F1DCFAB202A5999009685D3 /* Frameworks */,
+				1F1DCFAC202A5999009685D3 /* Headers */,
+				1F1DCFAD202A5999009685D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KPCCAPIClient_watchOS;
+			productName = KPCCAPIClient_watchOS;
+			productReference = 1F1DCFAF202A5999009685D3 /* KPCCAPIClient_watchOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1F1DCFBB202A59B2009685D3 /* KPCCAPIClient_tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F1DCFC1202A59B2009685D3 /* Build configuration list for PBXNativeTarget "KPCCAPIClient_tvOS" */;
+			buildPhases = (
+				1F1DCFB7202A59B2009685D3 /* Sources */,
+				1F1DCFB8202A59B2009685D3 /* Frameworks */,
+				1F1DCFB9202A59B2009685D3 /* Headers */,
+				1F1DCFBA202A59B2009685D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KPCCAPIClient_tvOS;
+			productName = KPCCAPIClient_tvOS;
+			productReference = 1F1DCFBC202A59B2009685D3 /* KPCCAPIClient_tvOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EFB887D6200830BD00C157D3 /* KPCCAPIClient_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFB887DF200830BD00C157D3 /* Build configuration list for PBXNativeTarget "KPCCAPIClient_iOS" */;
 			buildPhases = (
 				EFB887D2200830BD00C157D3 /* Sources */,
 				EFB887D3200830BD00C157D3 /* Frameworks */,
@@ -205,9 +412,9 @@
 			);
 			dependencies = (
 			);
-			name = KPCCAPIClient;
+			name = KPCCAPIClient_iOS;
 			productName = KPCCAPIClient;
-			productReference = EFB887D7200830BD00C157D3 /* KPCCAPIClient.framework */;
+			productReference = EFB887D7200830BD00C157D3 /* KPCCAPIClient_iOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -219,6 +426,18 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Southern California Public Radio";
 				TargetAttributes = {
+					1F1DCFA1202A593E009685D3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					1F1DCFAE202A5999009685D3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					1F1DCFBB202A59B2009685D3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					EFB887D6200830BD00C157D3 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
@@ -238,12 +457,36 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EFB887D6200830BD00C157D3 /* KPCCAPIClient */,
+				EFB887D6200830BD00C157D3 /* KPCCAPIClient_iOS */,
+				1F1DCFA1202A593E009685D3 /* KPCCAPIClient_macOS */,
+				1F1DCFAE202A5999009685D3 /* KPCCAPIClient_watchOS */,
+				1F1DCFBB202A59B2009685D3 /* KPCCAPIClient_tvOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1F1DCFA0202A593E009685D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1DCFAD202A5999009685D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1DCFBA202A59B2009685D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EFB887D5200830BD00C157D3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,6 +497,114 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1F1DCF9D202A593E009685D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F1DD04D202A6AE1009685D3 /* Episode+KPCCAPIClient.swift in Sources */,
+				1F1DD01B202A6ADC009685D3 /* Audio.swift in Sources */,
+				1F1DD064202A6AE8009685D3 /* KPCCAPIClient.swift in Sources */,
+				1F1DD020202A6ADC009685D3 /* Location.swift in Sources */,
+				1F1DD051202A6AE1009685D3 /* Program+KPCCAPIClient.swift in Sources */,
+				1F1DD024202A6ADC009685D3 /* ScheduleOccurrence.swift in Sources */,
+				1F1DD01E202A6ADC009685D3 /* Event.swift in Sources */,
+				1F1DD04E202A6AE1009685D3 /* Event+KPCCAPIClient.swift in Sources */,
+				1F1DD01D202A6ADC009685D3 /* Episode.swift in Sources */,
+				1F1DD01F202A6ADC009685D3 /* List.swift in Sources */,
+				1F1DD04F202A6AE1009685D3 /* List+KPCCAPIClient.swift in Sources */,
+				1F1DD027202A6ADC009685D3 /* Tag.swift in Sources */,
+				1F1DD053202A6AE1009685D3 /* Settings+KPCCAPIClient.swift in Sources */,
+				1F1DD01A202A6ADC009685D3 /* Attribution.swift in Sources */,
+				1F1DD069202A6AEE009685D3 /* DateRangeExtension.swift in Sources */,
+				1F1DD068202A6AEE009685D3 /* DateExtension.swift in Sources */,
+				1F1DD026202A6ADC009685D3 /* Sponsor.swift in Sources */,
+				1F1DD04C202A6AE1009685D3 /* Article+KPCCAPIClient.swift in Sources */,
+				1F1DD018202A6ADC009685D3 /* Asset.swift in Sources */,
+				1F1DD023202A6ADC009685D3 /* ProgramSchedule.swift in Sources */,
+				1F1DD052202A6AE1009685D3 /* ProgramSchedule+KPCCAPIClient.swift in Sources */,
+				1F1DD021202A6ADC009685D3 /* Member.swift in Sources */,
+				1F1DD025202A6ADC009685D3 /* Settings.swift in Sources */,
+				1F1DD019202A6ADC009685D3 /* AssetSize.swift in Sources */,
+				1F1DD017202A6ADC009685D3 /* Article.swift in Sources */,
+				1F1DD022202A6ADC009685D3 /* Program.swift in Sources */,
+				1F1DD016202A6ADC009685D3 /* Address.swift in Sources */,
+				1F1DD01C202A6ADC009685D3 /* Category.swift in Sources */,
+				1F1DD050202A6AE1009685D3 /* Member+KPCCAPIClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1DCFAA202A5999009685D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F1DD055202A6AE2009685D3 /* Episode+KPCCAPIClient.swift in Sources */,
+				1F1DD02D202A6ADC009685D3 /* Audio.swift in Sources */,
+				1F1DD065202A6AE9009685D3 /* KPCCAPIClient.swift in Sources */,
+				1F1DD032202A6ADC009685D3 /* Location.swift in Sources */,
+				1F1DD059202A6AE2009685D3 /* Program+KPCCAPIClient.swift in Sources */,
+				1F1DD036202A6ADC009685D3 /* ScheduleOccurrence.swift in Sources */,
+				1F1DD030202A6ADC009685D3 /* Event.swift in Sources */,
+				1F1DD056202A6AE2009685D3 /* Event+KPCCAPIClient.swift in Sources */,
+				1F1DD02F202A6ADC009685D3 /* Episode.swift in Sources */,
+				1F1DD031202A6ADC009685D3 /* List.swift in Sources */,
+				1F1DD057202A6AE2009685D3 /* List+KPCCAPIClient.swift in Sources */,
+				1F1DD039202A6ADC009685D3 /* Tag.swift in Sources */,
+				1F1DD05B202A6AE2009685D3 /* Settings+KPCCAPIClient.swift in Sources */,
+				1F1DD02C202A6ADC009685D3 /* Attribution.swift in Sources */,
+				1F1DD06C202A6AEF009685D3 /* DateRangeExtension.swift in Sources */,
+				1F1DD06B202A6AEF009685D3 /* DateExtension.swift in Sources */,
+				1F1DD038202A6ADC009685D3 /* Sponsor.swift in Sources */,
+				1F1DD054202A6AE2009685D3 /* Article+KPCCAPIClient.swift in Sources */,
+				1F1DD02A202A6ADC009685D3 /* Asset.swift in Sources */,
+				1F1DD035202A6ADC009685D3 /* ProgramSchedule.swift in Sources */,
+				1F1DD05A202A6AE2009685D3 /* ProgramSchedule+KPCCAPIClient.swift in Sources */,
+				1F1DD033202A6ADC009685D3 /* Member.swift in Sources */,
+				1F1DD037202A6ADC009685D3 /* Settings.swift in Sources */,
+				1F1DD02B202A6ADC009685D3 /* AssetSize.swift in Sources */,
+				1F1DD029202A6ADC009685D3 /* Article.swift in Sources */,
+				1F1DD034202A6ADC009685D3 /* Program.swift in Sources */,
+				1F1DD028202A6ADC009685D3 /* Address.swift in Sources */,
+				1F1DD02E202A6ADC009685D3 /* Category.swift in Sources */,
+				1F1DD058202A6AE2009685D3 /* Member+KPCCAPIClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F1DCFB7202A59B2009685D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F1DD05D202A6AE2009685D3 /* Episode+KPCCAPIClient.swift in Sources */,
+				1F1DD03F202A6ADD009685D3 /* Audio.swift in Sources */,
+				1F1DD066202A6AEA009685D3 /* KPCCAPIClient.swift in Sources */,
+				1F1DD044202A6ADD009685D3 /* Location.swift in Sources */,
+				1F1DD061202A6AE2009685D3 /* Program+KPCCAPIClient.swift in Sources */,
+				1F1DD048202A6ADD009685D3 /* ScheduleOccurrence.swift in Sources */,
+				1F1DD042202A6ADD009685D3 /* Event.swift in Sources */,
+				1F1DD05E202A6AE2009685D3 /* Event+KPCCAPIClient.swift in Sources */,
+				1F1DD041202A6ADD009685D3 /* Episode.swift in Sources */,
+				1F1DD043202A6ADD009685D3 /* List.swift in Sources */,
+				1F1DD05F202A6AE2009685D3 /* List+KPCCAPIClient.swift in Sources */,
+				1F1DD04B202A6ADD009685D3 /* Tag.swift in Sources */,
+				1F1DD063202A6AE2009685D3 /* Settings+KPCCAPIClient.swift in Sources */,
+				1F1DD03E202A6ADD009685D3 /* Attribution.swift in Sources */,
+				1F1DD06F202A6AEF009685D3 /* DateRangeExtension.swift in Sources */,
+				1F1DD06E202A6AEF009685D3 /* DateExtension.swift in Sources */,
+				1F1DD04A202A6ADD009685D3 /* Sponsor.swift in Sources */,
+				1F1DD05C202A6AE2009685D3 /* Article+KPCCAPIClient.swift in Sources */,
+				1F1DD03C202A6ADD009685D3 /* Asset.swift in Sources */,
+				1F1DD047202A6ADD009685D3 /* ProgramSchedule.swift in Sources */,
+				1F1DD062202A6AE2009685D3 /* ProgramSchedule+KPCCAPIClient.swift in Sources */,
+				1F1DD045202A6ADD009685D3 /* Member.swift in Sources */,
+				1F1DD049202A6ADD009685D3 /* Settings.swift in Sources */,
+				1F1DD03D202A6ADD009685D3 /* AssetSize.swift in Sources */,
+				1F1DD03B202A6ADD009685D3 /* Article.swift in Sources */,
+				1F1DD046202A6ADD009685D3 /* Program.swift in Sources */,
+				1F1DD03A202A6ADD009685D3 /* Address.swift in Sources */,
+				1F1DD040202A6ADD009685D3 /* Category.swift in Sources */,
+				1F1DD060202A6AE2009685D3 /* Member+KPCCAPIClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EFB887D2200830BD00C157D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,6 +645,148 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		1F1DCFA8202A593E009685D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 544G8Q9F6F;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = KPCCAPIClient/Misc/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.americanpublicmedia.KPCCAPIClient-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		1F1DCFA9202A593E009685D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 544G8Q9F6F;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = KPCCAPIClient/Misc/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.americanpublicmedia.KPCCAPIClient-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		1F1DCFB5202A5999009685D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 544G8Q9F6F;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KPCCAPIClient/Misc/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.americanpublicmedia.KPCCAPIClient-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Debug;
+		};
+		1F1DCFB6202A5999009685D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 544G8Q9F6F;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KPCCAPIClient/Misc/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.americanpublicmedia.KPCCAPIClient-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Release;
+		};
+		1F1DCFC2202A59B2009685D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 544G8Q9F6F;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KPCCAPIClient/Misc/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.americanpublicmedia.KPCCAPIClient-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		1F1DCFC3202A59B2009685D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 544G8Q9F6F;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KPCCAPIClient/Misc/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.americanpublicmedia.KPCCAPIClient-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
 		EFB887DD200830BD00C157D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -418,11 +911,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = KPCCAPIClient/Info.plist;
+				INFOPLIST_FILE = KPCCAPIClient/Misc/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.americanpublicmedia.KPCCAPIClient;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.americanpublicmedia.KPCCAPIClient-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -442,11 +935,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = KPCCAPIClient/Info.plist;
+				INFOPLIST_FILE = KPCCAPIClient/Misc/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.americanpublicmedia.KPCCAPIClient;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.americanpublicmedia.KPCCAPIClient-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -457,6 +950,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1F1DCFA7202A593E009685D3 /* Build configuration list for PBXNativeTarget "KPCCAPIClient_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F1DCFA8202A593E009685D3 /* Debug */,
+				1F1DCFA9202A593E009685D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F1DCFB4202A5999009685D3 /* Build configuration list for PBXNativeTarget "KPCCAPIClient_watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F1DCFB5202A5999009685D3 /* Debug */,
+				1F1DCFB6202A5999009685D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F1DCFC1202A59B2009685D3 /* Build configuration list for PBXNativeTarget "KPCCAPIClient_tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F1DCFC2202A59B2009685D3 /* Debug */,
+				1F1DCFC3202A59B2009685D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EFB887D1200830BD00C157D3 /* Build configuration list for PBXProject "KPCCAPIClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -466,7 +986,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EFB887DF200830BD00C157D3 /* Build configuration list for PBXNativeTarget "KPCCAPIClient" */ = {
+		EFB887DF200830BD00C157D3 /* Build configuration list for PBXNativeTarget "KPCCAPIClient_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EFB887E0200830BD00C157D3 /* Debug */,

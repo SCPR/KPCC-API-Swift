@@ -11,7 +11,7 @@
 //
 
 import Foundation
-import UIKit
+//import UIKit
 
 extension Settings {
 	public static func get(withContext context:String?, completion: @escaping ([String:Any]?, KPCCAPIError?) -> Void) {
