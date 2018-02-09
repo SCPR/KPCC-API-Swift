@@ -57,7 +57,9 @@ extension ProgramSchedule {
 	/// # Example:
 	/// Retrieving the program schedule starting from today, including the next 2 days:
 	/// ```
-	/// ProgramSchedule.get(withStartDate: Date(), length: 172800) { (programSchedule, error) in
+	/// let startDate = Calendar.current.startOfDay(for: Date())
+	///
+	/// ProgramSchedule.get(withStartDate: startDate, length: 172800) { (programSchedule, error) in
 	///    print(programSchedule)
 	/// }
 	/// ```
@@ -82,16 +84,16 @@ extension ProgramSchedule {
 		var queryItems:[URLQueryItem] = []
 
 		if let startDate = startDate {
-			components.queryItems = [
+			queryItems.append(
 				URLQueryItem(
 					name: "start_time",
 					value: String(Int(startDate.timeIntervalSince1970))
 				)
-			]
+			)
 		}
 
 		if let length = length {
-			if length > 0 && length < 604800 {
+			if length > 0 && length <= 604800 {
 				let lengthString:String = String(Int(length))
 				queryItems.append(URLQueryItem(name: "length", value: lengthString))
 			}
