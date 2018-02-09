@@ -21,13 +21,63 @@ struct ProgramsResponse: Codable {
 }
 
 public extension Program {
+	/// Retrieve all active (On Air and Online-Only) programs.
+	///
+	/// # Example:
+	/// Retrieving all On Air and Online-Only programs:
+	/// ```
+	/// Program.get() { (programs, error) in
+	///     print(programs)
+	/// }
+	/// ```
+	///
+	/// # Reference:
+	///   [KPCC API Reference - Programs](https://github.com/SCPR/api-docs/blob/master/KPCC/v3/endpoints/programs.md)
+	///
+	/// - Parameter completion: A completion handler containing an array of programs and/or an error.
+	///
+	/// - Author: Jeff Campbell
 	public static func get(completion: @escaping ([Program]?, KPCCAPIError?) -> Void) {
-		guard let components = URLComponents(string: "programs") else {
-			DispatchQueue.main.async {
-				completion(nil, .buildComponentsError)
-			}
+		self.get(programsWithStatuses: nil, completion: completion)
+	}
+
+	/// Retrieve programs with specified statuses.
+	///
+	/// # Example:
+	/// Retrieving active Online-Only programs:
+	/// ```
+	/// Program.get(programsWithStatuses: [.onlineOnly]) { (programs, error) in
+	///     print(programs)
+	/// }
+	/// ```
+	///
+	/// # Reference:
+	///   [KPCC API Reference - Programs](https://github.com/SCPR/api-docs/blob/master/KPCC/v3/endpoints/programs.md)
+	///
+	/// - Parameter completion: A completion handler containing an array of programs and/or an error.
+	///
+	/// - Author: Jeff Campbell
+	public static func get(programsWithStatuses statuses:[ProgramStatus]?, completion: @escaping ([Program]?, KPCCAPIError?) -> Void) {
+		guard var components = URLComponents(string: "programs") else {
+			completion(nil, .buildComponentsError)
 			return
 		}
+
+		var queryItems:[URLQueryItem] = []
+
+		if let statuses = statuses {
+			var statusesString = ""
+			for status in statuses {
+				if statusesString.count > 0 {
+					statusesString = statusesString + ","
+				}
+				statusesString = statusesString + status.rawValue
+			}
+
+			queryItems.append(URLQueryItem(name: "air_status", value: statusesString))
+		}
+
+		components.queryItems = queryItems
 
 		KPCCAPIClient.shared.get(withURLComponents: components) { (data, error) in
 			if let data = data {
@@ -55,6 +105,24 @@ public extension Program {
 		}
 	}
 
+	/// Retrieve the program associated with a given program slug (ie. "airtalk").
+	///
+	/// # Example:
+	/// Retrieving a program with the slug "airtalk":
+	/// ```
+	/// Program.get(withProgramSlug: "airtalk") { (program, error) in
+	///    print(program)
+	/// }
+	/// ```
+	///
+	/// # Reference:
+	///   [KPCC API Reference - Programs](https://github.com/SCPR/api-docs/blob/master/KPCC/v3/endpoints/programs.md)
+	///
+	/// - Parameters:
+	///   - programSlug: The slug associated with the program being retrieved.
+	///   - completion: A completion handler with an program and/or an error.
+	///
+	/// - Author: Jeff Campbell
 	public static func get(withProgramSlug programSlug:String, completion: @escaping (Program?, KPCCAPIError?) -> Void) {
 		guard let components = URLComponents(string: String(format: "programs/%@", programSlug)) else {
 			completion(nil, .buildComponentsError)

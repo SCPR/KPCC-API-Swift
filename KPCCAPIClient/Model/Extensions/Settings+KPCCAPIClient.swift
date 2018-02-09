@@ -11,9 +11,28 @@
 //
 
 import Foundation
-//import UIKit
 
 extension Settings {
+	/// Retrieve settings.
+	///
+	/// # Example:
+	/// Retrieving settings without a context:
+	/// ```
+	/// Settings.get(withContext:nil) { (settings, error) in
+	///    print(settings)
+	/// }
+	/// ```
+	///
+	/// - Important: The settings returned from this method are mainly intended for internal KPCC use and are subject to change at any time.
+	///
+	/// # Reference:
+	///   [KPCC API Reference - Settings](https://github.com/SCPR/api-docs/blob/master/KPCC/v3/endpoints/settings.md)
+	///
+	/// - Parameters:
+	///   - context: An optional context that the settings are associated with. A nil value returns only non-contextual settings.
+	///   - completion: A completion handler with a dictionary containing settings and/or an error.
+	///
+	/// - Author: Jeff Campbell
 	public static func get(withContext context:String?, completion: @escaping ([String:Any]?, KPCCAPIError?) -> Void) {
 		let urlComponentString = String(format: "%@/%@", "settings", context!)
 		guard let components = URLComponents(string: urlComponentString) else {

@@ -34,7 +34,44 @@ struct ProgramScheduleResponse: Codable {
 }
 
 extension ProgramSchedule {
-	public static func get(dateRange: DateRange? = nil, completion: @escaping (ProgramSchedule?, KPCCAPIError?) -> Void) {
+	/// Retrieve the current program schedule (starts Monday of the current week, with a length of 1 week).
+	///
+	/// # Example:
+	/// Retrieving the current program schedule:
+	/// ```
+	/// ProgramSchedule.get() { (programSchedule, error) in
+	///    print(programSchedule)
+	/// }
+	/// ```
+	///
+	/// # Reference:
+	///   [KPCC API Reference - Schedule](https://github.com/SCPR/api-docs/blob/master/KPCC/v3/endpoints/schedule.md)
+	///
+	/// - Author: Jeff Campbell
+	public static func get(completion: @escaping (ProgramSchedule?, KPCCAPIError?) -> Void) {
+		self.get(withStartDate: nil, length: nil, completion: completion)
+	}
+
+	/// Retrieve a program schedule.
+	///
+	/// # Example:
+	/// Retrieving the program schedule starting from today, including the next 2 days:
+	/// ```
+	/// ProgramSchedule.get(withStartDate: Date(), length: 172800) { (programSchedule, error) in
+	///    print(programSchedule)
+	/// }
+	/// ```
+	///
+	/// # Reference:
+	///   [KPCC API Reference - Schedule](https://github.com/SCPR/api-docs/blob/master/KPCC/v3/endpoints/schedule.md)
+	///
+	/// - Parameters:
+	///   - startDate: The earliest date for retrieved schedule. A nil value returns a schedule starting Monday of the current week. Note that a date more than 1 month in the future will return a 400 bad request error.
+	///   - length: The maximum length of the program schedule to retrieve. A nil value defaults to 1 week.
+	///   - completion: A completion handler with a program schedule and/or an error.
+	///
+	/// - Author: Jeff Campbell
+	public static func get(withStartDate startDate: Date?, length:TimeInterval?, completion: @escaping (ProgramSchedule?, KPCCAPIError?) -> Void) {
 		guard var components = URLComponents(string: "schedule") else {
 			DispatchQueue.main.async {
 				completion(nil, .buildComponentsError)
@@ -42,18 +79,25 @@ extension ProgramSchedule {
 			return
 		}
 
-		if let dateRange = dateRange {
+		var queryItems:[URLQueryItem] = []
+
+		if let startDate = startDate {
 			components.queryItems = [
 				URLQueryItem(
 					name: "start_time",
-					value: String(Int(dateRange.start.timeIntervalSince1970))
-				),
-				URLQueryItem(
-					name: "length",
-					value: String(Int(dateRange.timeInterval))
+					value: String(Int(startDate.timeIntervalSince1970))
 				)
 			]
 		}
+
+		if let length = length {
+			if length > 0 && length < 604800 {
+				let lengthString:String = String(Int(length))
+				queryItems.append(URLQueryItem(name: "length", value: lengthString))
+			}
+		}
+
+		components.queryItems = queryItems
 
 		KPCCAPIClient.shared.get(withURLComponents: components) { (data, error) in
 			if let data = data {

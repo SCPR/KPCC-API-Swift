@@ -15,19 +15,19 @@ import Foundation
 public struct Event: Codable {
 	public enum EventType:String, Codable {
 		/// A Forum: Community Engagement event.
-		case community
+		case communityEnagement		= "comm"
 
 		/// A Forum: Cultural event.
-		case cultural
+		case cultural				= "cult"
 
 		/// A Forum: Town Hall event.
-		case townhall
+		case townHall				= "hall"
 
 		/// A sponsored event.
-		case sponsored
+		case sponsored				= "spon"
 
 		/// A staff pick event.
-		case staffpick
+		case staffPick				= "pick"
 	}
 
 	/// The event's ID.

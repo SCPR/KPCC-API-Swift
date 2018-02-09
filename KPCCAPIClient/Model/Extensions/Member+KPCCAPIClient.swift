@@ -17,6 +17,21 @@ struct MemberResponse: Codable {
 }
 
 extension Member {
+	/// Retrieve a member by pledge token.
+	///
+	/// # Example:
+	/// Retrieving a member with the pledge token `asdf1234`:
+	/// ```
+	/// Member.get(withPledgeToken: "asdf1234") { (member, error) in
+	///    print(member)
+	/// }
+	/// ```
+	///
+	/// - Parameters:
+	///   - pledgeToken: The member's pledge token.
+	///   - completion: A completion handler with a member and/or an error.
+	///
+	/// - Author: Jeff Campbell
 	public static func get(withPledgeToken pledgeToken:String, completion: @escaping (Member?, KPCCAPIError?) -> Void) {
 		let urlComponentString = String(format: "%@/%@", "members", pledgeToken)
 		guard let components = URLComponents(string: urlComponentString) else {

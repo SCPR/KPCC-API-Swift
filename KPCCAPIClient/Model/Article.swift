@@ -13,6 +13,13 @@
 import Foundation
 
 public struct Article: Listable, Codable {
+	public enum ArticleType:String {
+		case news		= "news"
+		case blogs		= "blogs"
+		case segments	= "segments"
+		case shells		= "shells"
+	}
+
 	/// The article's ID.
 	public var id:String?					= UUID().uuidString
 

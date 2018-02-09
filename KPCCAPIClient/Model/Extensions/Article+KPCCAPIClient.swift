@@ -17,7 +17,55 @@ struct ArticlesResponse: Codable {
 }
 
 extension Article {
-	public static func get(withTypes types:String?, limit:Int? = 8, completion: @escaping ([Article]?, KPCCAPIError?) -> Void) {
+	/// Retrieve most recent articles associated with the (optional) given type(s).
+	///
+	/// # Example:
+	/// Retrieving recent `news` and `blog` type articles:
+	/// ```
+	/// Article.get(withTypes: [.news, .blogs]) { (articles, error) in
+	///     print(articles)
+	/// }
+	/// ```
+	///
+	/// # Reference:
+	///   [KPCC API Reference - Articles](https://github.com/SCPR/api-docs/blob/master/KPCC/v3/endpoints/articles.md)
+	///
+	/// - Parameters:
+	///   - types: The type(s) of articles to retrieve. A nil value retrieves articles matching a default set of types (news, blogs, and segments).
+	///   - completion: A completion handler containing an array of articles and/or an error.
+	///
+	/// - Author: Jeff Campbell
+	public static func get(withTypes types:[ArticleType]?, completion: @escaping ([Article]?, KPCCAPIError?) -> Void) {
+		self.get(withTypes:types, date:nil, startDate:nil, endDate:nil, query:nil, categories:nil, tags:nil, limit: nil, page:nil, completion: completion)
+	}
+
+	/// Retrieve most recent articles associated with (optional) type(s), with the option to specify a limit count.
+	///
+	/// # Example:
+	/// Retrieving `news` and `blog` type articles matching the search query "Tim Cook", having the "iPhone" tag and limited to 20 results:
+	/// ```
+	/// Article.get(withTypes: [.news, .blogs], date: nil, startDate: nil, endDate: nil, query: "Tim Cook", categories: nil, tags: ["iPhone"], limit: 20, page: nil) { (articles, error) in
+	///     print(articles)
+	/// }
+	/// ```
+	///
+	/// # Reference:
+	///   [KPCC API Reference - Articles](https://github.com/SCPR/api-docs/blob/master/KPCC/v3/endpoints/articles.md)
+	///
+	/// - Parameters:
+	///   - types: The type(s) of articles to retrieve. A nil value retrieves articles matching a default set of types (news, blogs, and segments).
+	///   - date: The publish date by which to filter retrieved articles.
+	///   - startDate: The earliest date by which to filter articles.
+	///   - endDate: The latest date by which to filter articles. Note that startDate must _also_ be specified.
+	///   - query: The query to search for (ie. "Tim Cook" or "Apple iPhone").
+	///   - categories: The categories associated with the the retrieved articles.
+	///   - tags: The tags associated with the the retrieved articles.
+	///   - limit: The maximum number of articles to retrieve. A nil value will return the API default, (currently 4).
+	///   - page: The page of articles. A nil value will return the first page.
+	///   - completion: A completion handler containing an array of articles and/or an error.
+	///
+	/// - Author: Jeff Campbell
+	public static func get(withTypes types:[ArticleType]?, date:Date?, startDate:Date?, endDate:Date?, query:String?, categories:[String]?, tags:[String]?, limit:Int?, page:Int?, completion: @escaping ([Article]?, KPCCAPIError?) -> Void) {
 		guard var components = URLComponents(string: "articles") else {
 			completion(nil, .buildComponentsError)
 			return
@@ -25,12 +73,53 @@ extension Article {
 
 		var queryItems:[URLQueryItem] = []
 
+		if let types = types {
+			var typesString = ""
+			for type in types {
+				if typesString.count > 0 {
+					typesString = typesString + ","
+				}
+				typesString = typesString + type.rawValue
+			}
+
+			queryItems.append(URLQueryItem(name: "types", value: typesString))
+		}
+
+		if let query = query {
+			let queryString = query.trimmingCharacters(in: .whitespacesAndNewlines)
+			queryItems.append(URLQueryItem(name: "query", value: queryString))
+		}
+
+		if let categories = categories {
+			var categoriesString = ""
+			for category in categories {
+				if categoriesString.count > 0 {
+					categoriesString = categoriesString + ","
+				}
+				categoriesString = categoriesString + category.trimmingCharacters(in: .whitespacesAndNewlines)
+			}
+
+			queryItems.append(URLQueryItem(name: "categories", value: categoriesString))
+		}
+
+		if let tags = tags {
+			var tagsString = ""
+			for tag in tags {
+				if tagsString.count > 0 {
+					tagsString = tagsString + ","
+				}
+				tagsString = tagsString + tag.trimmingCharacters(in: .whitespacesAndNewlines)
+			}
+
+			queryItems.append(URLQueryItem(name: "tags", value: tagsString))
+		}
+
 		if let limit = limit {
 			queryItems.append(URLQueryItem(name: "limit", value: String(limit)))
 		}
 
-		if let types = types {
-			queryItems.append(URLQueryItem(name: "types", value: types))
+		if let page = page {
+			components.queryItems?.append(URLQueryItem(name: "page", value: String(page)))
 		}
 
 		components.queryItems = queryItems
@@ -62,6 +151,24 @@ extension Article {
 		}
 	}
 
+	/// Retrieve an article by ID.
+	///
+	/// # Example:
+	/// Retrieving an article with the ID of `asdf1234`:
+	/// ```
+	/// Article.get(withID: "asdf1234") { (articles, error) in
+	///     print(articles)
+	/// }
+	/// ```
+	///
+	/// # Reference:
+	///   [KPCC API Reference - Articles](https://github.com/SCPR/api-docs/blob/master/KPCC/v3/endpoints/articles.md)
+	///
+	/// - Parameters:
+	///   - articleID: The ID associated with the article being retrieved.
+	///   - completion: A completion handler with an article and/or an error.
+	///
+	/// - Author: Jeff Campbell
 	public static func get(withID articleID:String, completion: @escaping (Article?, KPCCAPIError?) -> Void) {
 		let urlComponentString = String(format: "%@/%@", "articles", articleID)
 		guard let components = URLComponents(string: urlComponentString) else {

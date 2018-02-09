@@ -17,7 +17,43 @@ struct EpisodesResponse: Codable {
 }
 
 extension Episode {
-	public static func get(withProgramSlug programSlug:String?, completion: @escaping ([Episode]?, KPCCAPIError?) -> Void) {
+	/// Retrieve most recent episodes associated with a given program.
+	///
+	/// # Example:
+	/// Retrieving episodes for a program with the slug `airtalk`:
+	/// ```
+	/// Episode.get(withProgramSlug: "airtalk") { (episodes, error) in
+	///     print(episodes)
+	/// }
+	/// ```
+	///
+	/// - Parameters:
+	///   - programSlug: The slug associated with the program you wish to retrieve episodes for.
+	///   - completion: A completion handler containing an array of episodes and/or an error.
+	///
+	/// - Author: Jeff Campbell
+	public static func get(withProgramSlug programSlug:String, completion: @escaping ([Episode]?, KPCCAPIError?) -> Void) {
+		self.get(withProgramSlug: programSlug, limit: nil, page: nil, completion: completion)
+	}
+
+	/// Retrieve most recent episodes associated with a given program, with the option to specify a limit count and page number.
+	///
+	/// # Example:
+	/// Retrieving episodes for a program with the slug `airtalk`, limited to 8 episodes:
+	/// ```
+	/// Episode.get(withProgramSlug: "airtalk", limit:8, page:nil) { (episodes, error) in
+	///     print(episodes)
+	/// }
+	/// ```
+	///
+	/// - Parameters:
+	///   - programSlug: The slug associated with the program you wish to retrieve episodes for.
+	///   - limit: The maximum number of episodes to retrieve. A nil value will return the API default (currently 4).
+	///   - page: The page of episodes. A nil value will return the the first page.
+	///   - completion: A completion handler containing an array of episodes and/or an error.
+	///
+	/// - Author: Jeff Campbell
+	public static func get(withProgramSlug programSlug:String, limit:Int?, page:Int?, completion: @escaping ([Episode]?, KPCCAPIError?) -> Void) {
 		guard var components = URLComponents(string: "episodes") else {
 			completion(nil, .buildComponentsError)
 			return
@@ -27,12 +63,16 @@ extension Episode {
 			URLQueryItem(
 				name: "program",
 				value: programSlug
-			),
-			URLQueryItem(
-				name: "limit",
-				value: "8"
 			)
 		]
+
+		if let limit = limit {
+			components.queryItems?.append(URLQueryItem(name: "limit", value: String(limit)))
+		}
+
+		if let page = page {
+			components.queryItems?.append(URLQueryItem(name: "page", value: String(page)))
+		}
 
 		KPCCAPIClient.shared.get(withURLComponents: components) { (data, error) in
 			if let data = data {
@@ -60,6 +100,21 @@ extension Episode {
 		}
 	}
 
+	/// Retrieve an episode by ID.
+	///
+	/// # Example:
+	/// Retrieving an episode with the ID of 123456:
+	/// ```
+	/// Episode.get(withID: 123456) { (episodes, error) in
+	///     print(episodes)
+	/// }
+	/// ```
+	///
+	/// - Parameters:
+	///   - episodeID: The ID associated with the episode being retrieved.
+	///   - completion: A completion handler with an episode and/or an error.
+	///
+	/// - Author: Jeff Campbell
 	public static func get(withID episodeID:Int, completion: @escaping (Episode?, KPCCAPIError?) -> Void) {
 		let urlComponentString = String(format: "%@/%d", "episodes", episodeID)
 		guard let components = URLComponents(string: urlComponentString) else {
