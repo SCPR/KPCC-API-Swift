@@ -131,12 +131,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F1DCFA2202A593E009685D3 /* KPCCAPIClient_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KPCCAPIClient_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F1DCFAF202A5999009685D3 /* KPCCAPIClient_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KPCCAPIClient_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F1DCFBC202A59B2009685D3 /* KPCCAPIClient_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KPCCAPIClient_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1DCFA2202A593E009685D3 /* KPCCAPIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KPCCAPIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1DCFAF202A5999009685D3 /* KPCCAPIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KPCCAPIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1DCFBC202A59B2009685D3 /* KPCCAPIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KPCCAPIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1DCFC5202A5AA6009685D3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F1DCFE2202A5D5C009685D3 /* KPCCAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KPCCAPIClient.h; sourceTree = "<group>"; };
-		EFB887D7200830BD00C157D3 /* KPCCAPIClient_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KPCCAPIClient_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFB887D7200830BD00C157D3 /* KPCCAPIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KPCCAPIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB888132008315600C157D3 /* KPCCAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPCCAPIClient.swift; sourceTree = "<group>"; };
 		EFB888152008336600C157D3 /* DateRangeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateRangeExtension.swift; sourceTree = "<group>"; };
 		EFB888162008336700C157D3 /* BackgroundTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTask.swift; sourceTree = "<group>"; };
@@ -239,10 +239,10 @@
 		EFB887D8200830BD00C157D3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EFB887D7200830BD00C157D3 /* KPCCAPIClient_iOS.framework */,
-				1F1DCFA2202A593E009685D3 /* KPCCAPIClient_macOS.framework */,
-				1F1DCFAF202A5999009685D3 /* KPCCAPIClient_watchOS.framework */,
-				1F1DCFBC202A59B2009685D3 /* KPCCAPIClient_tvOS.framework */,
+				EFB887D7200830BD00C157D3 /* KPCCAPIClient.framework */,
+				1F1DCFA2202A593E009685D3 /* KPCCAPIClient.framework */,
+				1F1DCFAF202A5999009685D3 /* KPCCAPIClient.framework */,
+				1F1DCFBC202A59B2009685D3 /* KPCCAPIClient.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -360,7 +360,7 @@
 			);
 			name = KPCCAPIClient_macOS;
 			productName = KPCCAPIClient_macOS;
-			productReference = 1F1DCFA2202A593E009685D3 /* KPCCAPIClient_macOS.framework */;
+			productReference = 1F1DCFA2202A593E009685D3 /* KPCCAPIClient.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		1F1DCFAE202A5999009685D3 /* KPCCAPIClient_watchOS */ = {
@@ -378,7 +378,7 @@
 			);
 			name = KPCCAPIClient_watchOS;
 			productName = KPCCAPIClient_watchOS;
-			productReference = 1F1DCFAF202A5999009685D3 /* KPCCAPIClient_watchOS.framework */;
+			productReference = 1F1DCFAF202A5999009685D3 /* KPCCAPIClient.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		1F1DCFBB202A59B2009685D3 /* KPCCAPIClient_tvOS */ = {
@@ -396,7 +396,7 @@
 			);
 			name = KPCCAPIClient_tvOS;
 			productName = KPCCAPIClient_tvOS;
-			productReference = 1F1DCFBC202A59B2009685D3 /* KPCCAPIClient_tvOS.framework */;
+			productReference = 1F1DCFBC202A59B2009685D3 /* KPCCAPIClient.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EFB887D6200830BD00C157D3 /* KPCCAPIClient_iOS */ = {
@@ -414,7 +414,7 @@
 			);
 			name = KPCCAPIClient_iOS;
 			productName = KPCCAPIClient;
-			productReference = EFB887D7200830BD00C157D3 /* KPCCAPIClient_iOS.framework */;
+			productReference = EFB887D7200830BD00C157D3 /* KPCCAPIClient.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -662,7 +662,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.americanpublicmedia.KPCCAPIClient-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = KPCCAPIClient;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -686,7 +686,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.americanpublicmedia.KPCCAPIClient-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = KPCCAPIClient;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -708,7 +708,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.americanpublicmedia.KPCCAPIClient-watchOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = KPCCAPIClient;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -732,7 +732,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.americanpublicmedia.KPCCAPIClient-watchOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = KPCCAPIClient;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -755,7 +755,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.americanpublicmedia.KPCCAPIClient-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = KPCCAPIClient;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -778,7 +778,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.americanpublicmedia.KPCCAPIClient-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = KPCCAPIClient;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -916,7 +916,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.americanpublicmedia.KPCCAPIClient-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = KPCCAPIClient;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -940,7 +940,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.americanpublicmedia.KPCCAPIClient-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = KPCCAPIClient;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

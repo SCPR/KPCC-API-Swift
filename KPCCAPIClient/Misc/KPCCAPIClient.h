@@ -8,7 +8,7 @@
 //  Copyright © 2018 Southern California Public Radio. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number.
 FOUNDATION_EXPORT double KPCCAPIClientVersionNumber;
