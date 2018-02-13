@@ -2,6 +2,8 @@
 
 This is a native Swift tool for accessing the KPCC API.
 
+It was designed to be used with iOS, macOS, watchOS, and tvOS targets. With some work it should also be usable for server-side Swift projects, such as [Vapor](https://vapor.codes/).
+
 ## Installation
 
 To integrate this framework into your Xcode project, clone (or otherwise download) it onto your development machine and drag the included _KPCCAPIClient.xcodeproj_ file into your project's file navigator in Xcode.
