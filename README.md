@@ -1,8 +1,20 @@
+## What Is This?
+
+This is a native Swift tool for accessing the KPCC API.
+
+## Installation
+
+To integrate this framework into your Xcode project, clone (or otherwise download) it onto your development machine and drag the included _KPCCAPIClient.xcodeproj_ file into your project's file navigator in Xcode.
+
+Once you have done so, drag the appropriate framework file from the _Products_ group into the Embedded Binaries section of the targets you wish to build it with. Then make sure to _import_ KPCCAPIClient at the top of any file(s) you wish to use it in.
+
 ## Basic Usage
 
-Currently, the KPCC API only provides GET requests, used to retrieve information about the associated resource.
+Currently, the KPCC API only supports GET requests, used to retrieve information about the associated resource.
 
 These calls are exposed in this API Client as static methods under the associated model struct (ie, `Program` or `Episode`), each beginning with the word `get` - so, for example, you can type "Program.get" and hit escape to display Xcode's autocompletion popover with methods for retrieving Programs.
+
+A number of examples showing common usage are provided below.
 
 ## Model
 
@@ -56,6 +68,40 @@ Program.get(programsWithStatuses: [.onlineOnly]) { (programs, error) in
 Program.get(withProgramSlug: "airtalk") { (program, error) in
     if let program = program {
         print(program)
+    }
+}
+```
+
+## Retrieving Episodes
+
+Retrieve Episode objects for individual on-demand episodes of KPCC programs.
+
+*Example:* The following method returns an array _AirTalk_ Episodes.
+
+```
+Episode.get(withProgramSlug: "airtalk") { (episodes, error) in
+    if let episodes = episodes {
+        print(episodes)
+    }
+}
+```
+
+*Example:* The following method returns an array of up to _AirTalk_ Episodes (the first page of results).
+
+```
+Episode.get(withProgramSlug: "airtalk", limit: 8, page: 1) { (episodes, error) in
+    if let episodes = episodes {
+        print(episodes)
+    }
+}
+```
+
+*Example:* The following method an Episode with the ID '_123456_'.
+
+```
+Episode.get(withID: 123456) { (episode, error) in
+    if let episode = episode {
+        print(episode)
     }
 }
 ```
@@ -162,40 +208,6 @@ List.get(withContext: "ios") { (lists, error) in
 List.get(withID: 123456) { (lists, error) in
     if let lists = lists {
         print(lists)
-    }
-}
-```
-
-## Retrieving Episodes
-
-Retrieve Episode objects for individual on-demand episodes of KPCC programs.
-
-*Example:* The following method returns an array _AirTalk_ Episodes.
-
-```
-Episode.get(withProgramSlug: "airtalk") { (episodes, error) in
-    if let episodes = episodes {
-        print(episodes)
-    }
-}
-```
-
-*Example:* The following method returns an array of up to _AirTalk_ Episodes (the first page of results).
-
-```
-Episode.get(withProgramSlug: "airtalk", limit: 8, page: 1) { (episodes, error) in
-    if let episodes = episodes {
-        print(episodes)
-    }
-}
-```
-
-*Example:* The following method an Episode with the ID '_123456_'.
-
-```
-Episode.get(withID: 123456) { (episode, error) in
-    if let episode = episode {
-        print(episode)
     }
 }
 ```
