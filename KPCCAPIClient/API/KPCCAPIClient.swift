@@ -33,7 +33,19 @@ public class KPCCAPIClient {
 	A centralized client for communicating with the KPCC API (v3).
 	*/
 
-	public var debugEnabled = false
+	public enum DebugLevel: String {
+		/// Display no debugging output.
+		case disabled
+
+		/// Display only basic/minimal debugging output.
+		case basic
+
+		/// Display all available debugging output.
+		case verbose
+	}
+
+	/// The level of debugging output to display.
+	public var debugLevel:DebugLevel = .disabled
 
 	fileprivate var urlSession: URLSession = {
 		return URLSession(configuration: URLSessionConfiguration.default)
@@ -67,7 +79,7 @@ extension KPCCAPIClient {
 extension KPCCAPIClient {
 	internal func get(withURLComponents urlComponents: URLComponents, completion: @escaping (Data?, KPCCAPIError?) -> Void) {
 		if let url = urlComponents.url(relativeTo: self.baseURL) {
-			if debugEnabled == true {
+			if self.debugLevel != .disabled {
 				print("KPCC API - get \(url.absoluteString)")
 			}
 
@@ -80,7 +92,7 @@ extension KPCCAPIClient {
 			#endif
 			let dataTask = urlSession.dataTask(with: url) { data, _, _ in
 				if let data = data {
-					if self.debugEnabled == true {
+					if self.debugLevel == .basic || self.debugLevel == .verbose {
 						if let dataString = String(bytes: data, encoding: .utf8) {
 							print("KPCC API - data \(dataString)")
 						}

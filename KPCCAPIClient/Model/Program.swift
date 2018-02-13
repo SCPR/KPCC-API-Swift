@@ -10,12 +10,12 @@
 //  Copyright © 2018 Southern California Public Radio. All rights reserved.
 //
 
-import Foundation
 #if os(iOS) || os(tvOS)
 	import UIKit
 #elseif os(OSX)
 	import AppKit
 #else
+	import Foundation
 #endif
 
 public struct Program: Listable, Codable {
