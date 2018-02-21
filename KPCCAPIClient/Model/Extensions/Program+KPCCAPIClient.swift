@@ -12,12 +12,12 @@
 
 import Foundation
 
-struct ProgramResponse: Codable {
-	var program:Program?
-}
-
 struct ProgramsResponse: Codable {
 	var programs:[Program]	= []
+}
+
+struct ProgramResponse: Codable {
+	var program:Program?
 }
 
 public extension Program {

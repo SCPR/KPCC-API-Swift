@@ -12,6 +12,10 @@
 
 import Foundation
 
+struct EpisodeResponse: Codable {
+	var episode:Episode
+}
+
 struct EpisodesResponse: Codable {
 	var episodes:[Episode]	= []
 }
@@ -128,12 +132,15 @@ extension Episode {
 		KPCCAPIClient.shared.get(withURLComponents: components) { (data, error) in
 			if let data = data {
 				do {
-					let episode	= try KPCCAPIClient.shared.jsonDecoder.decode(Episode.self, from: data)
+					let episodeResponse	= try KPCCAPIClient.shared.jsonDecoder.decode(EpisodeResponse.self, from: data)
+					let episode			= episodeResponse.episode
 
 					DispatchQueue.main.async {
 						completion(episode, nil)
 					}
-				} catch _ as DecodingError {
+				} catch let error as DecodingError {
+					print("FOO = \(error)")
+
 					DispatchQueue.main.async {
 						completion(nil, .decodingError)
 					}

@@ -26,7 +26,7 @@ public struct Episode: Listable, Codable {
 	public var airDate:Date?
 
 	/// The episode's associated Audio objects.
-	public var audios:[Audio]		= []
+	public var audios:[Audio]?		= []
 
 	/// The episode's public URL.
 	public var publicURL:URL?
@@ -35,7 +35,7 @@ public struct Episode: Listable, Codable {
 	public var program:Program?
 
 	/// The episode's associated Article objects.
-	public var segments:[Article]	= []
+	public var segments:[Article]?	= []
 
 	public init() {
 	}

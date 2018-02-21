@@ -93,15 +93,35 @@ public struct List: Codable {
 		self.createdAt		= try values.decode(Date.self, forKey: .createdAt)
 		self.updatedAt		= try values.decode(Date.self, forKey: .updatedAt)
 
-		if let items = try? values.decode([Article].self, forKey: .items) {
-			self.items		= items
-			self.type		= .article
-		} else if let items = try? values.decode([Program].self, forKey: .items) {
-			self.items		= items
-			self.type		= .program
-		} else if let items = try? values.decode([Episode].self, forKey: .items) {
-			self.items		= items
-			self.type		= .episode
+		let type			= try? values.decode(ListType.self, forKey: .type)
+		if type != nil {
+			self.type			= type!
+
+			if self.type == .article {
+				if let items = try? values.decode([Article].self, forKey: .items) {
+					self.items		= items
+				}
+			} else if self.type == .program {
+				if let items = try? values.decode([Program].self, forKey: .items) {
+					self.items		= items
+				}
+			} else if self.type == .episode {
+				if let items = try? values.decode([Episode].self, forKey: .items) {
+					self.items		= items
+				}
+			}
+		} else {
+			// Legacy for pre-Codable!
+			if let items = try? values.decode([Article].self, forKey: .items) {
+				self.items		= items
+				self.type		= .article
+			} else if let items = try? values.decode([Program].self, forKey: .items) {
+				self.items		= items
+				self.type		= .program
+			} else if let items = try? values.decode([Episode].self, forKey: .items) {
+				self.items		= items
+				self.type		= .episode
+			}
 		}
 	}
 

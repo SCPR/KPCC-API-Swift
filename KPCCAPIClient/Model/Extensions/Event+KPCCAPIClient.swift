@@ -35,7 +35,7 @@ extension Event {
 	///   - completion: A completion handler containing an array of events and/or an error.
 	///
 	/// - Author: Jeff Campbell
-	static func get(withTypes types:[EventType]?, completion: @escaping ([Event]?, KPCCAPIError?) -> Void) {
+	public static func get(withTypes types:[EventType]?, completion: @escaping ([Event]?, KPCCAPIError?) -> Void) {
 		self.get(withTypes: types, startDate: nil, endDate: nil, limit: nil, completion: completion)
 	}
 
@@ -60,7 +60,7 @@ extension Event {
 	///   - completion: A completion handler containing an array of events and/or an error.
 	///
 	/// - Author: Jeff Campbell
-	static func get(withTypes types:[EventType]?, startDate:Date?, endDate:Date?, limit:Int?, completion: @escaping ([Event]?, KPCCAPIError?) -> Void) {
+	public static func get(withTypes types:[EventType]?, startDate:Date?, endDate:Date?, limit:Int?, completion: @escaping ([Event]?, KPCCAPIError?) -> Void) {
 		guard var components = URLComponents(string: "episodes") else {
 			completion(nil, .buildComponentsError)
 			return

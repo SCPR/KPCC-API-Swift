@@ -16,6 +16,10 @@ struct ArticlesResponse: Codable {
 	var articles:[Article]	= []
 }
 
+struct ArticleResponse: Codable {
+	var article:Article
+}
+
 extension Article {
 	/// Retrieve most recent articles associated with the (optional) given type(s).
 	///
@@ -179,7 +183,8 @@ extension Article {
 		KPCCAPIClient.shared.get(withURLComponents: components) { (data, error) in
 			if let data = data {
 				do {
-					let article	= try KPCCAPIClient.shared.jsonDecoder.decode(Article.self, from: data)
+					let articleResponse	= try KPCCAPIClient.shared.jsonDecoder.decode(ArticleResponse.self, from: data)
+					let article			= articleResponse.article
 
 					DispatchQueue.main.async {
 						completion(article, nil)

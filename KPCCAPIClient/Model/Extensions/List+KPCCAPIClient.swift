@@ -12,8 +12,12 @@
 
 import Foundation
 
-struct ListResponse: Codable {
+struct ListsResponse: Codable {
 	var lists:[List]	= []
+}
+
+struct ListResponse: Codable {
+	var list:List
 }
 
 extension List {
@@ -52,8 +56,9 @@ extension List {
 		KPCCAPIClient.shared.get(withURLComponents: components) { (data, error) in
 			if let data = data {
 				do {
-					let listResponse	= try KPCCAPIClient.shared.jsonDecoder.decode(ListResponse.self, from: data)
-					let lists			= listResponse.lists
+					let listsResponse	= try KPCCAPIClient.shared.jsonDecoder.decode(ListsResponse.self, from: data)
+					let lists			= listsResponse.lists
+
 					DispatchQueue.main.async {
 						completion(lists, nil)
 					}
@@ -102,7 +107,8 @@ extension List {
 		KPCCAPIClient.shared.get(withURLComponents: components) { (data, error) in
 			if let data = data {
 				do {
-					let list	= try KPCCAPIClient.shared.jsonDecoder.decode(List.self, from: data)
+					let listResponse	= try KPCCAPIClient.shared.jsonDecoder.decode(ListResponse.self, from: data)
+					let list			= listResponse.list
 
 					DispatchQueue.main.async {
 						completion(list, nil)
