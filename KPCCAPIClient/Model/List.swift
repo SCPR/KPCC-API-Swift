@@ -12,7 +12,7 @@
 
 import Foundation
 
-public protocol Listable {
+public protocol Listable: Codable {
 }
 
 public struct List: Codable {
@@ -33,8 +33,7 @@ public struct List: Codable {
 		case episode
 	}
 
-	/// The collections's title.
-//	var id:String?							= UUID().uuidString
+	/// The collections's id.
 	public var id:Int?
 
 	/// The collections's title.
@@ -59,9 +58,9 @@ public struct List: Codable {
 	public var items:[Listable]						= []
 
 	// INTERNAL...
-	
+
 	/// The collection's type.
-	public var type:ListType			= .episode
+	public var types:[ListType]			= [.episode]
 
 	/// The collection's identity.
 	public var identity:ListIdentity	= .other
@@ -76,7 +75,15 @@ public struct List: Codable {
 		try container.encode(self.endsAt, forKey: .endsAt)
 		try container.encode(self.createdAt, forKey: .createdAt)
 		try container.encode(self.updatedAt, forKey: .updatedAt)
-//		try container.encode(self.items, forKey: .items)	// TODO
+		try container.encode(self.types, forKey: .types)
+
+		if self.types.contains(List.ListType.program) {
+			try container.encode(items as! [Program], forKey: .items)
+		} else if self.types.contains(List.ListType.article) {
+			try container.encode(items as! [Article], forKey: .items)
+		} else if self.types.contains(List.ListType.episode) {
+			try container.encode(items as! [Episode], forKey: .items)
+		}
 	}
 
 	public init(from decoder: Decoder) throws {
@@ -88,39 +95,24 @@ public struct List: Codable {
 		let context			= try values.decode(String.self, forKey: .context)
 		self.contexts		= [context]
 
-		self.startsAt		= try values.decode(Date.self, forKey: .startsAt)
-		self.endsAt			= try values.decode(Date.self, forKey: .endsAt)
-		self.createdAt		= try values.decode(Date.self, forKey: .createdAt)
-		self.updatedAt		= try values.decode(Date.self, forKey: .updatedAt)
+		self.startsAt		= try? values.decode(Date.self, forKey: .startsAt)
+		self.endsAt			= try? values.decode(Date.self, forKey: .endsAt)
+		self.createdAt		= try? values.decode(Date.self, forKey: .createdAt)
+		self.updatedAt		= try? values.decode(Date.self, forKey: .updatedAt)
 
-		let type			= try? values.decode(ListType.self, forKey: .type)
-		if type != nil {
-			self.type			= type!
+		self.types			= try values.decode([ListType].self, forKey: .types)
 
-			if self.type == .article {
-				if let items = try? values.decode([Article].self, forKey: .items) {
-					self.items		= items
-				}
-			} else if self.type == .program {
-				if let items = try? values.decode([Program].self, forKey: .items) {
-					self.items		= items
-				}
-			} else if self.type == .episode {
-				if let items = try? values.decode([Episode].self, forKey: .items) {
-					self.items		= items
-				}
+		if self.types.contains(ListType.program) {
+			if let items = try? values.decode([Program].self, forKey: .items) {
+				self.items		= items
 			}
-		} else {
-			// Legacy for pre-Codable!
+		} else if self.types.contains(ListType.article) {
 			if let items = try? values.decode([Article].self, forKey: .items) {
 				self.items		= items
-				self.type		= .article
-			} else if let items = try? values.decode([Program].self, forKey: .items) {
+			}
+		} else if self.types.contains(ListType.episode) {
+			if let items = try? values.decode([Episode].self, forKey: .items) {
 				self.items		= items
-				self.type		= .program
-			} else if let items = try? values.decode([Episode].self, forKey: .items) {
-				self.items		= items
-				self.type		= .episode
 			}
 		}
 	}
@@ -134,13 +126,13 @@ public struct List: Codable {
 		case createdAt			= "created_at"
 		case updatedAt			= "updated_at"
 		case items				= "items"
-		case type				= "type"
+		case types				= "types"
 		case identity			= "identity"
 	}
 
-	public init(withItems items:[Listable], type:ListType, identity:ListIdentity, title:String) {
+	public init(withItems items:[Listable], types:[ListType], identity:ListIdentity, title:String) {
 		self.items		= items
-		self.type		= type
+		self.types		= types
 		self.identity	= identity
 		self.title		= title
 	}
