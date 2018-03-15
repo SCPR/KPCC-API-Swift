@@ -100,7 +100,6 @@
 		1F1DD06F202A6AEF009685D3 /* DateRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888152008336600C157D3 /* DateRangeExtension.swift */; };
 		EFB888142008315600C157D3 /* KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888132008315600C157D3 /* KPCCAPIClient.swift */; };
 		EFB888192008336700C157D3 /* DateRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888152008336600C157D3 /* DateRangeExtension.swift */; };
-		EFB8881A2008336700C157D3 /* BackgroundTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888162008336700C157D3 /* BackgroundTask.swift */; };
 		EFB8881C2008336700C157D3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888182008336700C157D3 /* DateExtension.swift */; };
 		EFB888332008351C00C157D3 /* ProgramSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888212008351B00C157D3 /* ProgramSchedule.swift */; };
 		EFB888342008351C00C157D3 /* AssetSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888222008351B00C157D3 /* AssetSize.swift */; };
@@ -139,7 +138,6 @@
 		EFB887D7200830BD00C157D3 /* KPCCAPIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KPCCAPIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB888132008315600C157D3 /* KPCCAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPCCAPIClient.swift; sourceTree = "<group>"; };
 		EFB888152008336600C157D3 /* DateRangeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateRangeExtension.swift; sourceTree = "<group>"; };
-		EFB888162008336700C157D3 /* BackgroundTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTask.swift; sourceTree = "<group>"; };
 		EFB888182008336700C157D3 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		EFB888212008351B00C157D3 /* ProgramSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramSchedule.swift; sourceTree = "<group>"; };
 		EFB888222008351B00C157D3 /* AssetSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetSize.swift; sourceTree = "<group>"; };
@@ -220,7 +218,6 @@
 		EF361A132028EB9C0028442A /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				EFB888162008336700C157D3 /* BackgroundTask.swift */,
 				EFB888182008336700C157D3 /* DateExtension.swift */,
 				EFB888152008336600C157D3 /* DateRangeExtension.swift */,
 			);
@@ -612,7 +609,6 @@
 				EFB8883A2008351C00C157D3 /* Article.swift in Sources */,
 				EFB888352008351C00C157D3 /* Program.swift in Sources */,
 				EFB888342008351C00C157D3 /* AssetSize.swift in Sources */,
-				EFB8881A2008336700C157D3 /* BackgroundTask.swift in Sources */,
 				EFB888612008355400C157D3 /* Program+KPCCAPIClient.swift in Sources */,
 				EFB8883C2008351C00C157D3 /* Member.swift in Sources */,
 				EFB888372008351C00C157D3 /* Episode.swift in Sources */,
@@ -903,6 +899,7 @@
 		EFB887E0200830BD00C157D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -927,6 +924,7 @@
 		EFB887E1200830BD00C157D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
