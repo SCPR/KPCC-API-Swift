@@ -1,4 +1,4 @@
-//
+                                                             //
 //  KPCC API Client
 //
 //	Client for KPCC API v3.
@@ -84,10 +84,8 @@ extension KPCCAPIClient {
 			}
 
 			let myActivity = ProcessInfo.processInfo.beginActivity(options: ProcessInfo.ActivityOptions.background, reason: "KPCC API")
-			print("Created Activity...")
 
 			let dataTask = urlSession.dataTask(with: url) { data, _, _ in
-				print("Data Task Complete...")
 				if let data = data {
 					if self.debugLevel == .basic || self.debugLevel == .verbose {
 						if let dataString = String(bytes: data, encoding: .utf8) {
@@ -101,7 +99,6 @@ extension KPCCAPIClient {
 				}
 
 				ProcessInfo.processInfo.endActivity(myActivity)
-				print("Ended Activity...")
 			}
 			dataTask.resume()
 		} else {

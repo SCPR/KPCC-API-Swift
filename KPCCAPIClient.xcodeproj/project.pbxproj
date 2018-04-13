@@ -98,6 +98,10 @@
 		1F1DD06C202A6AEF009685D3 /* DateRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888152008336600C157D3 /* DateRangeExtension.swift */; };
 		1F1DD06E202A6AEF009685D3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888182008336700C157D3 /* DateExtension.swift */; };
 		1F1DD06F202A6AEF009685D3 /* DateRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888152008336600C157D3 /* DateRangeExtension.swift */; };
+		EFB3BB002081428D0007C206 /* Category+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB3BAFF2081428D0007C206 /* Category+KPCCAPIClient.swift */; };
+		EFB3BB01208145490007C206 /* Category+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB3BAFF2081428D0007C206 /* Category+KPCCAPIClient.swift */; };
+		EFB3BB022081454A0007C206 /* Category+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB3BAFF2081428D0007C206 /* Category+KPCCAPIClient.swift */; };
+		EFB3BB032081454A0007C206 /* Category+KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB3BAFF2081428D0007C206 /* Category+KPCCAPIClient.swift */; };
 		EFB888142008315600C157D3 /* KPCCAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888132008315600C157D3 /* KPCCAPIClient.swift */; };
 		EFB888192008336700C157D3 /* DateRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888152008336600C157D3 /* DateRangeExtension.swift */; };
 		EFB8881C2008336700C157D3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB888182008336700C157D3 /* DateExtension.swift */; };
@@ -135,6 +139,7 @@
 		1F1DCFBC202A59B2009685D3 /* KPCCAPIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KPCCAPIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1DCFC5202A5AA6009685D3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F1DCFE2202A5D5C009685D3 /* KPCCAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KPCCAPIClient.h; sourceTree = "<group>"; };
+		EFB3BAFF2081428D0007C206 /* Category+KPCCAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+KPCCAPIClient.swift"; sourceTree = "<group>"; };
 		EFB887D7200830BD00C157D3 /* KPCCAPIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KPCCAPIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB888132008315600C157D3 /* KPCCAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPCCAPIClient.swift; sourceTree = "<group>"; };
 		EFB888152008336600C157D3 /* DateRangeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateRangeExtension.swift; sourceTree = "<group>"; };
@@ -293,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				EFB888512008355300C157D3 /* Article+KPCCAPIClient.swift */,
+				EFB3BAFF2081428D0007C206 /* Category+KPCCAPIClient.swift */,
 				EFB888482008355200C157D3 /* Episode+KPCCAPIClient.swift */,
 				EFB8884D2008355300C157D3 /* Event+KPCCAPIClient.swift */,
 				EFB888562008355400C157D3 /* List+KPCCAPIClient.swift */,
@@ -420,7 +426,7 @@
 		EFB887CE200830BD00C157D3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Southern California Public Radio";
 				TargetAttributes = {
 					1F1DCFA1202A593E009685D3 = {
@@ -498,6 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB3BB01208145490007C206 /* Category+KPCCAPIClient.swift in Sources */,
 				1F1DD04D202A6AE1009685D3 /* Episode+KPCCAPIClient.swift in Sources */,
 				1F1DD01B202A6ADC009685D3 /* Audio.swift in Sources */,
 				1F1DD064202A6AE8009685D3 /* KPCCAPIClient.swift in Sources */,
@@ -534,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB3BB022081454A0007C206 /* Category+KPCCAPIClient.swift in Sources */,
 				1F1DD055202A6AE2009685D3 /* Episode+KPCCAPIClient.swift in Sources */,
 				1F1DD02D202A6ADC009685D3 /* Audio.swift in Sources */,
 				1F1DD065202A6AE9009685D3 /* KPCCAPIClient.swift in Sources */,
@@ -570,6 +578,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB3BB032081454A0007C206 /* Category+KPCCAPIClient.swift in Sources */,
 				1F1DD05D202A6AE2009685D3 /* Episode+KPCCAPIClient.swift in Sources */,
 				1F1DD03F202A6ADD009685D3 /* Audio.swift in Sources */,
 				1F1DD066202A6AEA009685D3 /* KPCCAPIClient.swift in Sources */,
@@ -635,6 +644,7 @@
 				EFB888382008351C00C157D3 /* Settings.swift in Sources */,
 				EFB888192008336700C157D3 /* DateRangeExtension.swift in Sources */,
 				EFB888392008351C00C157D3 /* Category.swift in Sources */,
+				EFB3BB002081428D0007C206 /* Category+KPCCAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,6 +807,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -804,6 +815,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -857,6 +869,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -864,6 +877,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

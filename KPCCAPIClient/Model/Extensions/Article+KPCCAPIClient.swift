@@ -89,6 +89,26 @@ extension Article {
 			queryItems.append(URLQueryItem(name: "types", value: typesString))
 		}
 
+		if startDate != nil || endDate != nil {
+			let dateFormatter = DateFormatter()
+			dateFormatter.dateFormat = "yyyy-MM-dd"
+
+			if let startDate = startDate {
+				let startDateString = dateFormatter.string(from: startDate)
+				queryItems.append(URLQueryItem(name: "start_date", value: startDateString))
+			}
+
+			if let endDate = endDate {
+				let endDateString = dateFormatter.string(from: endDate)
+				queryItems.append(URLQueryItem(name: "end_date", value: endDateString))
+
+				if startDate == nil {
+					// The KPCC API requires a start date to use end_date, if one has not been provided. We'll provide one from the (relatively) distant past... - JAC
+					queryItems.append(URLQueryItem(name: "start_date", value: "2001-01-01"))
+				}
+			}
+		}
+
 		if let query = query {
 			let queryString = query.trimmingCharacters(in: .whitespacesAndNewlines)
 			queryItems.append(URLQueryItem(name: "query", value: queryString))
@@ -137,8 +157,7 @@ extension Article {
 					DispatchQueue.main.async {
 						completion(articles, nil)
 					}
-				} catch let foo as DecodingError {
-					print("foo = \(foo)")
+				} catch _ as DecodingError {
 					DispatchQueue.main.async {
 						completion(nil, .decodingError)
 					}
