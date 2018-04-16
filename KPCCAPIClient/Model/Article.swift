@@ -48,7 +48,7 @@ public struct Article: Listable, Codable {
 	public var publicURL:URL?
 
 	/// The article's Category.
-	public var category:Category?
+	public var category:ArticleCategory?
 
 	/// Any Asset objects associated with the article.
 	public var assets:[Asset]				= []

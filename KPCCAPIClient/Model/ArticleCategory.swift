@@ -1,7 +1,7 @@
 //
 //  KPCC API Client
 //
-//	Category
+//	ArticleCategory
 //
 //	API Documentation:
 //	  - https://github.com/SCPR/api-docs/tree/master/KPCC/v3
@@ -12,7 +12,7 @@
 
 import Foundation
 
-public struct Category: Codable {
+public struct ArticleCategory: Codable {
 	/// The category's ID.
 	public var id:Int?
 
@@ -25,9 +25,6 @@ public struct Category: Codable {
 	/// The category's public URL.
 	public var publicURL:URL?
 
-	public init() {
-	}
-
 	enum CodingKeys: String, CodingKey {
 		case id						= "id"
 		case slug					= "slug"
@@ -35,4 +32,3 @@ public struct Category: Codable {
 		case publicURL				= "public_url"
 	}
 }
-

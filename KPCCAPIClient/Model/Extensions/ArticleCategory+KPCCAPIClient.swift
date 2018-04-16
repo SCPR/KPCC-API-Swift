@@ -13,14 +13,14 @@
 import Foundation
 
 struct CategoriesResponse: Codable {
-	var categories:[Category]	= []
+	var categories:[ArticleCategory]	= []
 }
 
 struct CategoryResponse: Codable {
-	var category:Category
+	var category:ArticleCategory
 }
 
-extension Category {
+extension ArticleCategory {
 	/// Retrieve all available categories.
 	///
 	/// # Example:
@@ -37,7 +37,7 @@ extension Category {
 	///   [KPCC API Reference - Articles](https://github.com/SCPR/api-docs/blob/master/KPCC/v3/endpoints/categories.md)
 	///
 	/// - Author: Jeff Campbell
-	public static func get(completion: @escaping ([Category]?, KPCCAPIError?) -> Void) {
+	public static func get(completion: @escaping ([ArticleCategory]?, KPCCAPIError?) -> Void) {
 		guard let components = URLComponents(string: "categories") else {
 			completion(nil, .buildComponentsError)
 			return
@@ -87,7 +87,7 @@ extension Category {
 	///   - completion: A completion handler with a category and/or an error.
 	///
 	/// - Author: Jeff Campbell
-	public static func get(withSlug slug:String, completion: @escaping (Category?, KPCCAPIError?) -> Void) {
+	public static func get(withSlug slug:String, completion: @escaping (ArticleCategory?, KPCCAPIError?) -> Void) {
 		let urlComponentString = String(format: "%@/%@", "categories", slug)
 		guard let components = URLComponents(string: urlComponentString) else {
 			completion(nil, .buildComponentsError)
