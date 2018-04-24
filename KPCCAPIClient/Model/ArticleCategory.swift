@@ -32,3 +32,9 @@ public struct ArticleCategory: Codable {
 		case publicURL				= "public_url"
 	}
 }
+
+extension ArticleCategory: Equatable {
+	public static func == (lhs: ArticleCategory, rhs: ArticleCategory) -> Bool {
+		return lhs.slug == rhs.slug
+	}
+}
