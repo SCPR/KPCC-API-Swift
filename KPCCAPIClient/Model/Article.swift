@@ -13,15 +13,19 @@
 import Foundation
 
 public struct Article: Listable, Codable {
-	public enum ArticleType:String {
-		case news		= "news"
-		case blogs		= "blogs"
-		case segments	= "segments"
-		case shells		= "shells"
+	public enum ArticleType:String, Codable {
+		case news		= "news_story"
+		case blog		= "blog_entry"
+		case segment	= "show_segment"
+		case shell		= "content_shell"
+		case event		= "event"
 	}
 
 	/// The article's ID.
 	public var id:String?					= UUID().uuidString
+
+	/// The article's type.
+	public var type:ArticleType?
 
 	/// The article's title.
 	public var title:String?
@@ -69,6 +73,7 @@ public struct Article: Listable, Codable {
 
 	enum CodingKeys: String, CodingKey {
 		case id					= "id"
+		case type				= "type"
 		case title				= "title"
 		case shortTitle			= "short_title"
 		case byline				= "byline"

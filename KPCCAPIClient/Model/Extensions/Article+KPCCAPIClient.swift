@@ -20,6 +20,14 @@ struct ArticleResponse: Codable {
 	var article:Article
 }
 
+public enum ArticleRequestType:String, Codable {
+	case news		= "news"
+	case blogs		= "blogs"
+	case segments	= "segments"
+	case shells		= "shells"
+	case external	= "external"
+}
+
 extension Article {
 	/// Retrieve most recent articles associated with the (optional) given type(s).
 	///
@@ -39,7 +47,7 @@ extension Article {
 	///   - completion: A completion handler containing an array of articles and/or an error.
 	///
 	/// - Author: Jeff Campbell
-	public static func get(withTypes types:[ArticleType]?, completion: @escaping ([Article]?, KPCCAPIError?) -> Void) {
+	public static func get(withTypes types:[ArticleRequestType]?, completion: @escaping ([Article]?, KPCCAPIError?) -> Void) {
 		self.get(withTypes:types, date:nil, startDate:nil, endDate:nil, query:nil, categories:nil, tags:nil, limit: nil, page:nil, completion: completion)
 	}
 
@@ -69,7 +77,7 @@ extension Article {
 	///   - completion: A completion handler containing an array of articles and/or an error.
 	///
 	/// - Author: Jeff Campbell
-	public static func get(withTypes types:[ArticleType]?, date:Date?, startDate:Date?, endDate:Date?, query:String?, categories:[String]?, tags:[String]?, limit:Int?, page:Int?, completion: @escaping ([Article]?, KPCCAPIError?) -> Void) {
+	public static func get(withTypes types:[ArticleRequestType]?, date:Date?, startDate:Date?, endDate:Date?, query:String?, categories:[String]?, tags:[String]?, limit:Int?, page:Int?, completion: @escaping ([Article]?, KPCCAPIError?) -> Void) {
 		guard var components = URLComponents(string: "articles") else {
 			completion(nil, .buildComponentsError)
 			return
