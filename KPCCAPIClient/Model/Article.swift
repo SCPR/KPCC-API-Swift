@@ -13,12 +13,22 @@
 import Foundation
 
 public struct Article: Listable, Codable {
+	/// Article type.
+	/// Note: For historical reasons, many things are considered "articles" that might not seem obvious.
+	/// They are included here in the interest of completeness. - JAC
 	public enum ArticleType:String, Codable {
-		case news		= "news_story"
-		case blog		= "blog_entry"
-		case segment	= "show_segment"
-		case shell		= "content_shell"
-		case event		= "event"
+		case abstract			= "abstract"
+		case newsStory			= "news_story"
+		case blogEntry			= "blog_entry"
+		case event				= "event"
+		case kpccProgram		= "kpcc_program"
+		case pijQuery			= "pij_query"
+		case showEpisode		= "show_episode"
+		case showSegment		= "show_segment"
+		case contentShell		= "content_shell"
+		case externalEpisode	= "external_episode"
+		case externalProgram	= "external_program"
+		case externalSegment	= "external_segment"
 	}
 
 	/// The article's ID.
