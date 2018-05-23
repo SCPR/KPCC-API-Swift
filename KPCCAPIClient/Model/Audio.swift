@@ -23,7 +23,7 @@ public struct Audio: Codable {
 	public var auxiliaryDescription:String?
 
 	/// The audio's URL.
-	public var url:URL?
+	public var url:URL
 
 	/// The audio's byline.
 	public var byline:String?
@@ -42,9 +42,6 @@ public struct Audio: Codable {
 
 	/// The audio's article object key.
 	public var articleObjectKey:String?
-
-	public init() {
-	}
 
 	enum CodingKeys: String, CodingKey {
 		case id						= "id"
