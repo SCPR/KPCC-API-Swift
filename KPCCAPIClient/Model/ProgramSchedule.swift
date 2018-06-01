@@ -37,7 +37,21 @@ public struct ProgramSchedule: Codable {
 	}
 
 	// ###
-	
+
+	public func scheduleOccurrenceAfter(date: Date) -> ScheduleOccurrence? {
+		if let currentScheduleOccurrence = self.scheduleOccurrence(date: date), let index = self.scheduleOccurrences.index(of: currentScheduleOccurrence) {
+			let nextIndex = index + 1
+
+			if self.scheduleOccurrences.count >= nextIndex + 1 {
+				let nextScheduleOccurrence = self.scheduleOccurrences[nextIndex]
+
+				return nextScheduleOccurrence
+			}
+		}
+
+		return nil
+	}
+
 	public func scheduleOccurrence(date: Date) -> ScheduleOccurrence? {
 		for scheduleOccurrence in self.scheduleOccurrences {
 			if scheduleOccurrence.normalizedDateRange.start <= date && scheduleOccurrence.normalizedDateRange.end >= date {
