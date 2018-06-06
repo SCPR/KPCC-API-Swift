@@ -27,10 +27,6 @@ public struct DateRange: Codable {
 		self.end				= try values.decode(Date.self, forKey: .end)
 	}
 
-	public init() {
-		self.init()
-	}
-
 	enum CodingKeys: String, CodingKey {
 		case start			= "start"
 		case end			= "end"

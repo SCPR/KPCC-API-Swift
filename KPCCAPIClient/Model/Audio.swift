@@ -55,5 +55,9 @@ public struct Audio: Codable {
 		case fileSize				= "filesize"
 		case articleObjectKey		= "article_obj_key"
 	}
+
+	public init(withURL url:URL) {
+		self.url = url
+	}
 }
 
