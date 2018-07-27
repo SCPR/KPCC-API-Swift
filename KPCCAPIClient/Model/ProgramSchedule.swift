@@ -54,7 +54,7 @@ public struct ProgramSchedule: Codable {
 
 	public func scheduleOccurrence(date: Date) -> ScheduleOccurrence? {
 		for scheduleOccurrence in self.scheduleOccurrences {
-			if scheduleOccurrence.normalizedDateRange.start <= date && scheduleOccurrence.normalizedDateRange.end >= date {
+			if scheduleOccurrence.dateRange.start <= date && scheduleOccurrence.dateRange.end >= date {
 				return scheduleOccurrence
 			}
 		}
