@@ -13,8 +13,8 @@
 import Foundation
 
 public struct AssetNative: Codable {
-	public let id:String
-	public let type:AssetNativeType?
+	public var id:String
+	public var type:AssetNativeType?
 
 	enum CodingKeys: String, CodingKey {
 		case id						= "id"
