@@ -67,7 +67,7 @@ public struct Event: Codable {
 	public var eventType:EventType?
 
 	/// The event's status as being officially held by KPCC or not.
-	public var isKPCCEvent:Bool?
+	public var isHouse:Bool?
 
 	/// The event's location.
 	public var location:Location?
@@ -103,7 +103,7 @@ public struct Event: Codable {
 		case pastTenseBody		= "past_tense_body"
 		case hashtag			= "hashtag"
 		case eventType			= "event_type"
-		case isKPCCEvent		= "is_kpcc"
+		case isHouse			= "is_kpcc"
 		case location			= "location"
 		case sponsor			= "sponsor"
 		case rsvpURL			= "rsvp_url"

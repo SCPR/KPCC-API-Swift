@@ -70,7 +70,7 @@ public struct Program: Listable, Codable {
 	public var publicURL:URL?
 
 	/// Whether the program is KPCC's own...
-	public var isKPCC:Bool?	= false
+	public var isHouse:Bool?	= false
 
 	public init() {
 	}
@@ -88,7 +88,7 @@ public struct Program: Listable, Codable {
 		case podcastURL			= "podcast_url"
 		case rssURL				= "rss_url"
 		case publicURL			= "public_url"
-		case isKPCC				= "is_kpcc"
+		case isHouse			= "is_kpcc"
 	}
 }
 

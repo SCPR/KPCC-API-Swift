@@ -46,12 +46,11 @@ public class KPCCAPIClient {
 
 	/// The level of debugging output to display.
 	public var debugLevel:DebugLevel = .disabled
+	public var baseURL: URL?	= URL(string: "https://www.scpr.org/api/v3/")
 
 	fileprivate var urlSession: URLSession = {
 		return URLSession(configuration: URLSessionConfiguration.default)
 	}()
-
-	fileprivate var baseURL: URL?	= URL(string: "https://www.scpr.org/api/v3/")
 
 	let jsonDecoder: JSONDecoder
 	let jsonEncoder: JSONEncoder
