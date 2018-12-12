@@ -110,31 +110,7 @@ extension Program {
 
 	public func coverImageURL(withBaseURL baseURL:URL?) -> URL? {
 		if let slug = self.slug {
-			let processedSlug	= slug.lowercased().replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range:nil)
-			let scaleString:String
-
-			#if os(iOS) || os(tvOS)
-			let scale	= UIScreen.main.scale
-			#elseif os(OSX)
-			let scale	= NSScreen.main?.backingScaleFactor ?? 1.0
-			#else
-			let scale	= 1.0
-			#endif
-
-			if scale >= 2.0 {
-				scaleString = String.init(format: "@%dx", Int(scale))
-			} else {
-				scaleString = "@2x"
-			}
-
-			let urlString:String!
-			if let baseURL = baseURL {
-				urlString = String(format: "%@%@%@%@", baseURL.absoluteString, processedSlug, scaleString, ".png")
-			} else {
-				urlString = String(format: "https://media.scpr.org/ios/v4/program-images/350x350/%@%@%@", processedSlug, scaleString, ".png")
-			}
-
-			return URL(string: urlString)
+			return Program.coverImageURL(forSlug: slug, baseURL: baseURL)
 		}
 
 		return nil
@@ -142,34 +118,68 @@ extension Program {
 
 	public func coverThumbnailImageURL(withBaseURL baseURL:URL?) -> URL? {
 		if let slug = self.slug {
-			let processedSlug	= slug.lowercased().replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range:nil)
-			let scaleString:String
-
-			#if os(iOS) || os(tvOS)
-			let scale	= UIScreen.main.scale
-			#elseif os(OSX)
-			let scale	= NSScreen.main?.backingScaleFactor ?? 1.0
-			#else
-			let scale	= 1.0
-			#endif
-
-			if scale >= 2.0 {
-				scaleString = String.init(format: "@%dx", Int(scale))
-			} else {
-				scaleString = "@2x"
-			}
-
-			let urlString:String!
-			if let baseURL = baseURL {
-				urlString = String(format: "%@%@%@%@", baseURL.absoluteString, processedSlug, scaleString, ".png")
-			} else {
-				urlString = String(format: "https://media.scpr.org/ios/v4/program-images/110x110/%@%@%@", processedSlug, scaleString, ".png")
-			}
-
-			return URL(string: urlString)
+			return Program.coverThumbnailImageURL(forSlug: slug, baseURL: baseURL)
 		}
 
 		return nil
+	}
+}
+
+extension Program {
+	public static func coverImageURL(forSlug slug:String, baseURL:URL?) -> URL? {
+		let processedSlug	= slug.lowercased().replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range:nil)
+		let scaleString:String
+
+		#if os(iOS) || os(tvOS)
+		let scale	= UIScreen.main.scale
+		#elseif os(OSX)
+		let scale	= NSScreen.main?.backingScaleFactor ?? 1.0
+		#else
+		let scale	= 1.0
+		#endif
+
+		if scale >= 2.0 {
+			scaleString = String.init(format: "@%dx", Int(scale))
+		} else {
+			scaleString = "@2x"
+		}
+
+		let urlString:String!
+		if let baseURL = baseURL {
+			urlString = String(format: "%@%@%@%@", baseURL.absoluteString, processedSlug, scaleString, ".png")
+		} else {
+			urlString = String(format: "https://media.scpr.org/ios/v4/program-images/350x350/%@%@%@", processedSlug, scaleString, ".png")
+		}
+
+		return URL(string: urlString)
+	}
+
+	public static func coverThumbnailImageURL(forSlug slug:String, baseURL:URL?) -> URL? {
+		let processedSlug	= slug.lowercased().replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.literal, range:nil)
+		let scaleString:String
+
+		#if os(iOS) || os(tvOS)
+		let scale	= UIScreen.main.scale
+		#elseif os(OSX)
+		let scale	= NSScreen.main?.backingScaleFactor ?? 1.0
+		#else
+		let scale	= 1.0
+		#endif
+
+		if scale >= 2.0 {
+			scaleString = String.init(format: "@%dx", Int(scale))
+		} else {
+			scaleString = "@2x"
+		}
+
+		let urlString:String!
+		if let baseURL = baseURL {
+			urlString = String(format: "%@%@%@%@", baseURL.absoluteString, processedSlug, scaleString, ".png")
+		} else {
+			urlString = String(format: "https://media.scpr.org/ios/v4/program-images/110x110/%@%@%@", processedSlug, scaleString, ".png")
+		}
+
+		return URL(string: urlString)
 	}
 }
 
