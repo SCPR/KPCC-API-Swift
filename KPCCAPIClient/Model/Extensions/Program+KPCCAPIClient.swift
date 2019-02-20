@@ -37,7 +37,7 @@ public extension Program {
 	/// - Parameter completion: A completion handler containing an array of programs and/or an error.
 	///
 	/// - Author: Jeff Campbell
-	public static func get(completion: @escaping ([Program]?, KPCCAPIError?) -> Void) {
+	static func get(completion: @escaping ([Program]?, KPCCAPIError?) -> Void) {
 		self.get(programsWithStatuses: nil, completion: completion)
 	}
 
@@ -57,7 +57,7 @@ public extension Program {
 	/// - Parameter completion: A completion handler containing an array of programs and/or an error.
 	///
 	/// - Author: Jeff Campbell
-	public static func get(programsWithStatuses statuses:[ProgramStatus]?, completion: @escaping ([Program]?, KPCCAPIError?) -> Void) {
+	static func get(programsWithStatuses statuses:[ProgramStatus]?, completion: @escaping ([Program]?, KPCCAPIError?) -> Void) {
 		guard var components = URLComponents(string: "programs") else {
 			completion(nil, .buildComponentsError)
 			return
@@ -123,7 +123,7 @@ public extension Program {
 	///   - completion: A completion handler with an program and/or an error.
 	///
 	/// - Author: Jeff Campbell
-	public static func get(withProgramSlug programSlug:String, completion: @escaping (Program?, KPCCAPIError?) -> Void) {
+	static func get(withProgramSlug programSlug:String, completion: @escaping (Program?, KPCCAPIError?) -> Void) {
 		guard let components = URLComponents(string: String(format: "programs/%@", programSlug)) else {
 			completion(nil, .buildComponentsError)
 			return
