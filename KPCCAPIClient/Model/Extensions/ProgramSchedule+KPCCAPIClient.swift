@@ -108,7 +108,7 @@ extension ProgramSchedule {
 					let scheduleOccurrences				= scheduleOccurrencesResponse.scheduleOccurrences
 
 					var programSchedule = ProgramSchedule()
-					programSchedule.scheduleOccurrences	= scheduleOccurrences
+					programSchedule.occurrences			= scheduleOccurrences
 
 					DispatchQueue.main.async {
 						completion(programSchedule, nil)

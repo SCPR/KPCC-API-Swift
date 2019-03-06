@@ -14,20 +14,20 @@ import Foundation
 
 public struct ProgramSchedule: Codable {
 	/// The ProgramSchedule's associated ScheduleOccurrence objects.
-	public var scheduleOccurrences: [ScheduleOccurrence]
+	public var occurrences: [ScheduleOccurrence]
 
 	/// The ProgramSchedule's associated DateRange objects.
 	public var dateRanges: [DateRange] {
-		return scheduleOccurrences.map { $0.dateRange }
+		return occurrences.map { $0.dateRange }
 	}
 
 	/// The ProgramSchedule's associated DateRange objects, normalized.
 	public var normalizedDateRanges: [DateRange] {
-		return scheduleOccurrences.map { $0.normalizedDateRange }
+		return occurrences.map { $0.normalizedDateRange }
 	}
 
 	public var currentScheduleOccurrence: ScheduleOccurrence? {
-		for scheduleOccurrence in self.scheduleOccurrences {
+		for scheduleOccurrence in self.occurrences {
 			if scheduleOccurrence.isCurrent {
 				return scheduleOccurrence
 			}
@@ -39,11 +39,11 @@ public struct ProgramSchedule: Codable {
 	// ###
 
 	public func scheduleOccurrenceAfter(date: Date) -> ScheduleOccurrence? {
-		if let currentScheduleOccurrence = self.scheduleOccurrence(date: date), let index = self.scheduleOccurrences.index(of: currentScheduleOccurrence) {
+		if let currentScheduleOccurrence = self.scheduleOccurrence(date: date), let index = self.occurrences.index(of: currentScheduleOccurrence) {
 			let nextIndex = index + 1
 
-			if self.scheduleOccurrences.count >= nextIndex + 1 {
-				let nextScheduleOccurrence = self.scheduleOccurrences[nextIndex]
+			if self.occurrences.count >= nextIndex + 1 {
+				let nextScheduleOccurrence = self.occurrences[nextIndex]
 
 				return nextScheduleOccurrence
 			}
@@ -53,7 +53,7 @@ public struct ProgramSchedule: Codable {
 	}
 
 	public func scheduleOccurrence(date: Date) -> ScheduleOccurrence? {
-		for scheduleOccurrence in self.scheduleOccurrences {
+		for scheduleOccurrence in self.occurrences {
 			if scheduleOccurrence.dateRange.start <= date && scheduleOccurrence.dateRange.end >= date {
 				return scheduleOccurrence
 			}
@@ -68,12 +68,40 @@ public struct ProgramSchedule: Codable {
 		return title
 	}
 
+	public func divideIntoDays() -> [Int:[ScheduleOccurrence]] {
+		var scheduleOccurrences							= Array(self.occurrences)
+		var scheduleByDay:[Int:[ScheduleOccurrence]]	= [:]
+
+		for index in 0...6 {
+			if let referenceDate		= Calendar.current.date(byAdding: .day, value: index, to: Date()) {
+				let startOfDate			= Calendar.current.startOfDay(for: referenceDate)
+				guard let endOfDate			= Calendar.current.date(byAdding: .day, value: 1, to: startOfDate) else {
+					continue
+				}
+
+				let dayOccurrences		= scheduleOccurrences.filter{
+					$0.dateRange.start >= startOfDate && $0.dateRange.start < endOfDate
+				}
+
+				scheduleByDay[index]	= dayOccurrences
+
+				for dayOccurrence in dayOccurrences {
+					if let dayOccurrenceIndex = scheduleOccurrences.index(of: dayOccurrence) {
+						scheduleOccurrences.remove(at: dayOccurrenceIndex)
+					}
+				}
+			}
+		}
+
+		return scheduleByDay
+	}
+
 	public init() {
-		self.scheduleOccurrences	= []
+		self.occurrences	= []
 	}
 
 	enum CodingKeys: String, CodingKey {
-		case scheduleOccurrences				= "schedule_occurrences"
+		case occurrences				= "schedule_occurrences"
 	}
 }
 
