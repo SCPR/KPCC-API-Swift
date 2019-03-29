@@ -19,6 +19,8 @@ public struct Member: Codable {
 	/// The member's pledge ID.
 	public var pledgeID:Int?
 
+	public var authenticatedStreamCodes:[String]	= []
+
 	public init() {
 	}
 

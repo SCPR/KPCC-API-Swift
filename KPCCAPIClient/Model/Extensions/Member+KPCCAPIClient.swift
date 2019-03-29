@@ -44,8 +44,10 @@ extension Member {
 		KPCCAPIClient.shared.get(withURLComponents: components) { (data, error) in
 			if let data = data {
 				do {
-					let memberResponse	= try KPCCAPIClient.shared.jsonDecoder.decode(MemberResponse.self, from: data)
-					let member			= memberResponse.member
+					let memberResponse					= try KPCCAPIClient.shared.jsonDecoder.decode(MemberResponse.self, from: data)
+					var member							= memberResponse.member
+
+					member?.authenticatedStreamCodes	= ["pledgefree"]
 
 					DispatchQueue.main.async {
 						completion(member, nil)

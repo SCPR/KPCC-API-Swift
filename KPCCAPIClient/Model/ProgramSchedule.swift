@@ -39,7 +39,7 @@ public struct ProgramSchedule: Codable {
 	// ###
 
 	public func scheduleOccurrenceAfter(date: Date) -> ScheduleOccurrence? {
-		if let currentScheduleOccurrence = self.scheduleOccurrence(date: date), let index = self.occurrences.index(of: currentScheduleOccurrence) {
+		if let currentScheduleOccurrence = self.scheduleOccurrence(date: date), let index = self.occurrences.firstIndex(of: currentScheduleOccurrence) {
 			let nextIndex = index + 1
 
 			if self.occurrences.count >= nextIndex + 1 {
@@ -86,7 +86,7 @@ public struct ProgramSchedule: Codable {
 				scheduleByDay[index]	= dayOccurrences
 
 				for dayOccurrence in dayOccurrences {
-					if let dayOccurrenceIndex = scheduleOccurrences.index(of: dayOccurrence) {
+					if let dayOccurrenceIndex = scheduleOccurrences.firstIndex(of: dayOccurrence) {
 						scheduleOccurrences.remove(at: dayOccurrenceIndex)
 					}
 				}
