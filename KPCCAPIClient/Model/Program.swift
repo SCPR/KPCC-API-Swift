@@ -37,7 +37,7 @@ public struct Program: Listable, Codable {
 	public var title:String?
 
 	/// The program's slug (a short, unique text descriptor that can be used as a key).
-	public var slug:String?
+	public var slug:String
 
 	/// The program's host (ie. 'Larry Mantle').
 	public var host:String?
@@ -109,17 +109,13 @@ extension Program {
 	}
 
 	public func coverImageURL(withBaseURL baseURL:URL?) -> URL? {
-		if let slug = self.slug {
-			return Program.coverImageURL(forSlug: slug, baseURL: baseURL)
-		}
+		return Program.coverImageURL(forSlug: slug, baseURL: baseURL)
 
 		return nil
 	}
 
 	public func coverThumbnailImageURL(withBaseURL baseURL:URL?) -> URL? {
-		if let slug = self.slug {
-			return Program.coverThumbnailImageURL(forSlug: slug, baseURL: baseURL)
-		}
+		return Program.coverThumbnailImageURL(forSlug: slug, baseURL: baseURL)
 
 		return nil
 	}
