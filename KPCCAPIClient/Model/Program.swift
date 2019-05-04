@@ -72,7 +72,8 @@ public struct Program: Listable, Codable {
 	/// Whether the program is KPCC's own...
 	public var isHouse:Bool?	= false
 
-	public init() {
+	public init(withSlug slug:String) {
+		self.slug = slug
 	}
 
 	enum CodingKeys: String, CodingKey {
@@ -110,14 +111,10 @@ extension Program {
 
 	public func coverImageURL(withBaseURL baseURL:URL?) -> URL? {
 		return Program.coverImageURL(forSlug: slug, baseURL: baseURL)
-
-		return nil
 	}
 
 	public func coverThumbnailImageURL(withBaseURL baseURL:URL?) -> URL? {
 		return Program.coverThumbnailImageURL(forSlug: slug, baseURL: baseURL)
-
-		return nil
 	}
 }
 
