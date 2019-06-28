@@ -61,7 +61,7 @@ public struct ProgramSchedule: Codable {
 
 		return nil
 	}
-	
+
 	public func title(date: Date) -> String? {
 		let title = scheduleOccurrence(date: date)?.title
 

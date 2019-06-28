@@ -15,7 +15,7 @@ import Foundation
 public struct Sponsor: Codable {
 	/// The sponsor's title.
 	public var title:String?
-	
+
 	/// The sponsor's URL.
 	public var url:URL?
 

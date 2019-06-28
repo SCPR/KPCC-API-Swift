@@ -71,7 +71,7 @@ public struct Event: Codable {
 
 	/// The event's location.
 	public var location:Location?
-	
+
 	/// The event's sponsor.
 	public var sponsor:Sponsor?
 
