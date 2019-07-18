@@ -17,14 +17,14 @@ public protocol Listable: Codable {
 
 public struct List: Codable {
 	public enum ListIdentity:String, Codable {
-		case myPrograms
-		case allPrograms
-		case headlineArticles
-		case curatedPrograms
-		case curatedEpisodes
-		case curatedArticles
-		case curatedEvents
-		case other
+		case myPrograms				= "my_programs"
+		case allPrograms			= "all_programs"
+		case headlineArticles		= "headline_articles"
+		case curatedPrograms		= "curated_programs"
+		case curatedEpisodes		= "curated_episodes"
+		case curatedArticles		= "curated_articles"
+		case curatedEvents			= "curated_events"
+		case other					= "other"
 	}
 
 	public enum ListType:String, Codable {
@@ -57,13 +57,25 @@ public struct List: Codable {
 	/// The collection's items.
 	public var items:[Listable]						= []
 
+	public var programItems:[Program] {
+		let programs = items.filter { $0 is Program }
+
+		return programs as! [Program]
+	}
+
+	public var articleItems:[Article] {
+		let articles = items.filter { $0 is Article }
+
+		return articles as! [Article]
+	}
+
 	// INTERNAL...
 
 	/// The collection's type.
 	public var types:[ListType]			= [.episode]
 
 	/// The collection's identity.
-	public var identity:ListIdentity	= .other
+	public var identity:ListIdentity	= .curatedArticles
 
 	public func encode(to encoder: Encoder) throws {
 		var container = encoder.container(keyedBy: CodingKeys.self)
