@@ -65,10 +65,10 @@ public struct Article: Listable, Codable {
 	public var category:ArticleCategory?
 
 	/// Any Asset objects associated with the article.
-	public var assets:[Asset]				= []
+	public var assets:[Asset]?				= []
 
 	/// Any Audio objects associated with the article.
-	public var audios:[Audio]				= []
+	public var audios:[Audio]?				= []
 
 	/// Any Attribution objects associated with the article.
 	public var attributions:[Attribution]	= []
