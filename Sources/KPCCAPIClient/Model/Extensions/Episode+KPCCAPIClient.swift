@@ -128,7 +128,7 @@ extension Episode {
 					let episode			= episodeResponse.episode
 
 					completion(episode, nil)
-				} catch let error as DecodingError {
+				} catch _ as DecodingError {
 					completion(nil, .decodingError)
 				} catch {
 					completion(nil, .other)
