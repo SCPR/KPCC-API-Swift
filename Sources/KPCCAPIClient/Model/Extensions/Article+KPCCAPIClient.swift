@@ -97,10 +97,15 @@ extension Article {
 			queryItems.append(URLQueryItem(name: "types", value: typesString))
 		}
 
-		if startDate != nil || endDate != nil {
-			let dateFormatter = DateFormatter()
-			dateFormatter.dateFormat = "yyyy-MM-dd"
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "yyyy-MM-dd"
 
+		if date != nil {
+			if let date = date {
+				let dateString = dateFormatter.string(from: date)
+				queryItems.append(URLQueryItem(name: "date", value: dateString))
+			}
+		} else if startDate != nil || endDate != nil {
 			if let startDate = startDate {
 				let startDateString = dateFormatter.string(from: startDate)
 				queryItems.append(URLQueryItem(name: "start_date", value: startDateString))
