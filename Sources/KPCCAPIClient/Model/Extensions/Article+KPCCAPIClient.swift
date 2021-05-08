@@ -156,7 +156,7 @@ extension Article {
 		}
 
 		if let page = page {
-			components.queryItems?.append(URLQueryItem(name: "page", value: String(page)))
+			queryItems.append(URLQueryItem(name: "page", value: String(page)))
 		}
 
 		components.queryItems = queryItems
