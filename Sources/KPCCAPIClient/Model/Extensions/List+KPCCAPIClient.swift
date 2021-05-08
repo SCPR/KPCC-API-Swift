@@ -59,22 +59,14 @@ extension List {
 					let listsResponse	= try KPCCAPIClient.shared.jsonDecoder.decode(ListsResponse.self, from: data)
 					let lists			= listsResponse.lists
 
-					DispatchQueue.main.async {
-						completion(lists, nil)
-					}
+					completion(lists, nil)
 				} catch _ as DecodingError {
-					DispatchQueue.main.async {
-						completion(nil, .decodingError)
-					}
+					completion(nil, .decodingError)
 				} catch {
-					DispatchQueue.main.async {
-						completion(nil, .other)
-					}
+					completion(nil, .other)
 				}
 			} else {
-				DispatchQueue.main.async {
-					completion(nil, .dataUnavailable)
-				}
+				completion(nil, .dataUnavailable)
 			}
 		}
 	}
@@ -98,9 +90,7 @@ extension List {
 	public static func get(withID listID:Int, completion: @escaping (List?, KPCCAPIError?) -> Void) {
 		let urlComponentString = String(format: "%@/%d", "lists", listID)
 		guard let components = URLComponents(string: urlComponentString) else {
-			DispatchQueue.main.async {
-				completion(nil, .buildComponentsError)
-			}
+			completion(nil, .buildComponentsError)
 			return
 		}
 
@@ -110,22 +100,14 @@ extension List {
 					let listResponse	= try KPCCAPIClient.shared.jsonDecoder.decode(ListResponse.self, from: data)
 					let list			= listResponse.list
 
-					DispatchQueue.main.async {
-						completion(list, nil)
-					}
+					completion(list, nil)
 				} catch _ as DecodingError {
-					DispatchQueue.main.async {
-						completion(nil, .decodingError)
-					}
+					completion(nil, .decodingError)
 				} catch {
-					DispatchQueue.main.async {
-						completion(nil, .other)
-					}
+					completion(nil, .other)
 				}
 			} else {
-				DispatchQueue.main.async {
-					completion(nil, .dataUnavailable)
-				}
+				completion(nil, .dataUnavailable)
 			}
 		}
 	}

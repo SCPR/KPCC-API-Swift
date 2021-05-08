@@ -87,22 +87,14 @@ extension Episode {
 					let episodesResponse	= try KPCCAPIClient.shared.jsonDecoder.decode(EpisodesResponse.self, from: data)
 					let episodes			= episodesResponse.episodes
 
-					DispatchQueue.main.async {
-						completion(episodes, nil)
-					}
+					completion(episodes, nil)
 				} catch _ as DecodingError {
-					DispatchQueue.main.async {
-						completion(nil, .decodingError)
-					}
+					completion(nil, .decodingError)
 				} catch {
-					DispatchQueue.main.async {
-						completion(nil, .other)
-					}
+					completion(nil, .other)
 				}
 			} else {
-				DispatchQueue.main.async {
-					completion(nil, .dataUnavailable)
-				}
+				completion(nil, .dataUnavailable)
 			}
 		}
 	}
@@ -135,24 +127,14 @@ extension Episode {
 					let episodeResponse	= try KPCCAPIClient.shared.jsonDecoder.decode(EpisodeResponse.self, from: data)
 					let episode			= episodeResponse.episode
 
-					DispatchQueue.main.async {
-						completion(episode, nil)
-					}
+					completion(episode, nil)
 				} catch let error as DecodingError {
-					print("FOO = \(error)")
-
-					DispatchQueue.main.async {
-						completion(nil, .decodingError)
-					}
+					completion(nil, .decodingError)
 				} catch {
-					DispatchQueue.main.async {
-						completion(nil, .other)
-					}
+					completion(nil, .other)
 				}
 			} else {
-				DispatchQueue.main.async {
-					completion(nil, .dataUnavailable)
-				}
+				completion(nil, .dataUnavailable)
 			}
 		}
 	}

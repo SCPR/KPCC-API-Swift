@@ -85,22 +85,14 @@ public extension Program {
 					let programsResponse	= try KPCCAPIClient.shared.jsonDecoder.decode(ProgramsResponse.self, from: data)
 					let programs			= programsResponse.programs
 
-					DispatchQueue.main.async {
-						completion(programs, nil)
-					}
+					completion(programs, nil)
 				} catch _ as DecodingError {
-					DispatchQueue.main.async {
-						completion(nil, .decodingError)
-					}
+					completion(nil, .decodingError)
 				} catch {
-					DispatchQueue.main.async {
-						completion(nil, .other)
-					}
+					completion(nil, .other)
 				}
 			} else {
-				DispatchQueue.main.async {
-					completion(nil, .dataUnavailable)
-				}
+				completion(nil, .dataUnavailable)
 			}
 		}
 	}
@@ -135,22 +127,14 @@ public extension Program {
 					let programResponse	= try KPCCAPIClient.shared.jsonDecoder.decode(ProgramResponse.self, from: data)
 					let program			= programResponse.program
 
-					DispatchQueue.main.async {
-						completion(program, nil)
-					}
+					completion(program, nil)
 				} catch _ as DecodingError {
-					DispatchQueue.main.async {
-						completion(nil, .decodingError)
-					}
+					completion(nil, .decodingError)
 				} catch {
-					DispatchQueue.main.async {
-						completion(nil, .other)
-					}
+					completion(nil, .other)
 				}
 			} else {
-				DispatchQueue.main.async {
-					completion(nil, .dataUnavailable)
-				}
+				completion(nil, .dataUnavailable)
 			}
 		}
 	}

@@ -35,9 +35,7 @@ extension Member {
 	public static func get(withPledgeToken pledgeToken:String, completion: @escaping (Member?, KPCCAPIError?) -> Void) {
 		let urlComponentString = String(format: "%@/%@", "members", pledgeToken)
 		guard let components = URLComponents(string: urlComponentString) else {
-			DispatchQueue.main.async {
-				completion(nil, .buildComponentsError)
-			}
+			completion(nil, .buildComponentsError)
 			return
 		}
 
@@ -49,22 +47,14 @@ extension Member {
 
 					member?.authenticatedStreamCodes	= ["pledgefree"]
 
-					DispatchQueue.main.async {
-						completion(member, nil)
-					}
+					completion(member, nil)
 				} catch _ as DecodingError {
-					DispatchQueue.main.async {
-						completion(nil, .decodingError)
-					}
+					completion(nil, .decodingError)
 				} catch {
-					DispatchQueue.main.async {
-						completion(nil, .other)
-					}
+					completion(nil, .other)
 				}
 			} else {
-				DispatchQueue.main.async {
-					completion(nil, .dataUnavailable)
-				}
+				completion(nil, .dataUnavailable)
 			}
 		}
 	}

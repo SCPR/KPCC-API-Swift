@@ -162,22 +162,14 @@ extension Article {
 					let articlesResponse	= try KPCCAPIClient.shared.jsonDecoder.decode(ArticlesResponse.self, from: data)
 					let articles			= articlesResponse.articles
 					
-					DispatchQueue.main.async {
-						completion(articles, nil)
-					}
+					completion(articles, nil)
 				} catch _ as DecodingError {
-					DispatchQueue.main.async {
-						completion(nil, .decodingError)
-					}
+					completion(nil, .decodingError)
 				} catch {
-					DispatchQueue.main.async {
-						completion(nil, .other)
-					}
+					completion(nil, .other)
 				}
 			} else {
-				DispatchQueue.main.async {
-					completion(nil, .dataUnavailable)
-				}
+				completion(nil, .dataUnavailable)
 			}
 		}
 	}
@@ -213,22 +205,14 @@ extension Article {
 					let articleResponse	= try KPCCAPIClient.shared.jsonDecoder.decode(ArticleResponse.self, from: data)
 					let article			= articleResponse.article
 
-					DispatchQueue.main.async {
-						completion(article, nil)
-					}
+					completion(article, nil)
 				} catch _ as DecodingError {
-					DispatchQueue.main.async {
-						completion(nil, .decodingError)
-					}
+					completion(nil, .decodingError)
 				} catch {
-					DispatchQueue.main.async {
-						completion(nil, .other)
-					}
+					completion(nil, .other)
 				}
 			} else {
-				DispatchQueue.main.async {
-					completion(nil, .dataUnavailable)
-				}
+				completion(nil, .dataUnavailable)
 			}
 		}
 	}

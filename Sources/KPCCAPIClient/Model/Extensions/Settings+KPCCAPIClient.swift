@@ -44,34 +44,22 @@ extension Settings {
 			if let data = data {
 				do {
 					guard let responseDictionary	= try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-						DispatchQueue.main.async {
-							completion(nil, .other)
-						}
+						completion(nil, .other)
 						return
 					}
 
 					if let settingsDictionary = responseDictionary["settings"] as? [String:Any] {
-						DispatchQueue.main.async {
-							completion(settingsDictionary, nil)
-						}
+						completion(settingsDictionary, nil)
 					} else {
-						DispatchQueue.main.async {
-							completion(nil, .other)
-						}
-					}
-				} catch _ as DecodingError {
-					DispatchQueue.main.async {
-						completion(nil, .decodingError)
-					}
-				} catch {
-					DispatchQueue.main.async {
 						completion(nil, .other)
 					}
+				} catch _ as DecodingError {
+					completion(nil, .decodingError)
+				} catch {
+					completion(nil, .other)
 				}
 			} else {
-				DispatchQueue.main.async {
-					completion(nil, .dataUnavailable)
-				}
+				completion(nil, .dataUnavailable)
 			}
 		}
 	}

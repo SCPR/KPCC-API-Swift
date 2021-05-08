@@ -75,9 +75,7 @@ extension ProgramSchedule {
 	/// - Author: Jeff Campbell
 	public static func get(withStartDate startDate: Date?, length:TimeInterval?, completion: @escaping (ProgramSchedule?, KPCCAPIError?) -> Void) {
 		guard var components = URLComponents(string: "schedule") else {
-			DispatchQueue.main.async {
-				completion(nil, .buildComponentsError)
-			}
+			completion(nil, .buildComponentsError)
 			return
 		}
 
@@ -110,22 +108,14 @@ extension ProgramSchedule {
 					var programSchedule = ProgramSchedule()
 					programSchedule.occurrences			= scheduleOccurrences
 
-					DispatchQueue.main.async {
-						completion(programSchedule, nil)
-					}
+					completion(programSchedule, nil)
 				} catch _ as DecodingError {
-					DispatchQueue.main.async {
-						completion(nil, .decodingError)
-					}
+					completion(nil, .decodingError)
 				} catch {
-					DispatchQueue.main.async {
-						completion(nil, .other)
-					}
+					completion(nil, .other)
 				}
 			} else {
-				DispatchQueue.main.async {
-					completion(nil, .dataUnavailable)
-				}
+				completion(nil, .dataUnavailable)
 			}
 		}
 	}
