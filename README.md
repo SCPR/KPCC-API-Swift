@@ -1,3 +1,7 @@
+**Note:** This code is deprecated as the KPCC API has been decomissioned and is no longer accessible. We will leave this repo in place for future reference.
+
+---
+
 ## What Is This?
 
 This is a native Swift tool for accessing the KPCC API.
